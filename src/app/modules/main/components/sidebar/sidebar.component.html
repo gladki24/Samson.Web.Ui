@@ -1,0 +1,9 @@
+<mat-nav-list>
+  <a mat-list-item
+     *ngFor="let button of buttons"
+     routerLinkActive="sidebar-button-text--active"
+     [routerLink]="button.url"
+  >
+    <mat-icon>{{ button.icon }}</mat-icon> <span class="sidebar-button-text">{{ button.text }}</span>
+  </a>
+</mat-nav-list>

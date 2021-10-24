@@ -1,0 +1,12 @@
+
+@mixin welcome-background {
+  background: #11998e;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(180deg, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(180deg, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@mixin main-background {
+  background: #00B4DB;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(180deg, #3f51b5, #00B4DB);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(180deg, #3f51b5, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

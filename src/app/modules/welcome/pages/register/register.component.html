@@ -1,0 +1,44 @@
+
+<main class="register-container">
+  <mat-card class="register-card">
+    <mat-card-title class="title">Rejestracja</mat-card-title>
+
+    <mat-card-content>
+      <form>
+        <app-input
+          label="Nazwa użytkownika"
+          type="text"
+        ></app-input>
+
+        <app-input
+          label="Imię"
+          type="text"
+        ></app-input>
+
+        <app-input
+          label="Nazwisko"
+          type="text"
+        ></app-input>
+
+        <app-input
+          label="Hasło"
+          type="password"
+        ></app-input>
+
+        <app-input
+          label="Powtórz hasło"
+          type="password"
+        ></app-input>
+      </form>
+    </mat-card-content>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-actions align="end">
+      <a routerLink="../login" mat-button>Mam już konto</a>
+      <button mat-flat-button color="primary">Utwórz konto</button>
+    </mat-card-actions>
+  </mat-card>
+</main>
+
+
