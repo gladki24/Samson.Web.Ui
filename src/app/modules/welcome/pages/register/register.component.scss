@@ -1,0 +1,19 @@
+@import 'src/theme.scss';
+
+.register-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include welcome-background;
+}
+
+.register-card {
+  width: 50%;
+}
+
+.title {
+  padding-bottom: 1rem;
+}

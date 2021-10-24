@@ -1,0 +1,29 @@
+
+<main class="login-container">
+  <mat-card class="login-card">
+    <mat-card-title class="title">Logowanie</mat-card-title>
+
+    <mat-card-content>
+      <form>
+        <app-input
+          label="Nazwa użytkownika"
+          type="text"
+        ></app-input>
+
+        <app-input
+          label="Hasło"
+          type="password"
+        ></app-input>
+      </form>
+    </mat-card-content>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-actions align="end">
+      <a routerLink="../register" mat-button>Rejestracja</a>
+      <button mat-flat-button color="primary">Zaloguj</button>
+    </mat-card-actions>
+  </mat-card>
+</main>
+
+
