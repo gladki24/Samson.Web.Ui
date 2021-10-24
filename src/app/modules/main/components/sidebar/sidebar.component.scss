@@ -1,0 +1,15 @@
+@use "~@angular/material" as mat;
+
+.sidebar {
+
+  &-button {
+
+    &-text {
+      margin-left: 1rem;
+
+      &--active {
+        font-weight: bold;
+      }
+    }
+  }
+}
