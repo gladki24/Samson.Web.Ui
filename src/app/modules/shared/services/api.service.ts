@@ -39,9 +39,12 @@ export class ApiService {
   /**
    * Perform DELETE http method
    * @param endpointUrl API endpoint
+   * @param body request
    */
-  public delete<TResponse>(endpointUrl: string): Observable<TResponse> {
-    return this._httpClient.delete<TResponse>(this._prepareApiUrl(endpointUrl));
+  public delete<TRequest, TResponse>(endpointUrl: string, body: TRequest): Observable<TResponse> {
+    return this._httpClient.delete<TResponse>(this._prepareApiUrl(endpointUrl), {
+      body: JSON.stringify(body)
+    });
   }
 
   /**

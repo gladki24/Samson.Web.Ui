@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatCardModule} from "@angular/material/card";
-import { InputComponent } from './components/input/input.component';
+import { FieldComponent } from './components/input/field.component';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 
@@ -10,10 +10,10 @@ import { MatInputModule } from "@angular/material/input";
 @NgModule({
   declarations: [
 
-    InputComponent
+    FieldComponent
   ],
   exports: [
-    InputComponent
+    FieldComponent
   ],
   imports: [
     CommonModule,
