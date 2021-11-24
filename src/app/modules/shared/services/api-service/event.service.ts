@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { ApiService } from "./api.service";
+import { ApiService } from "../api.service";
 import { Observable } from "rxjs";
 import { ControllerCommunicationServiceBase } from "./controller-communication-service.base";
 import { map } from "rxjs/operators";
-import { EventViewModel } from "../models/event/event-view.model";
-import { CreateEventRequest } from "../models/event/create-event.request";
-import { UpdateEventRequest } from "../models/event/update-event.request";
-import { DeleteEventRequest } from "../models/event/delete-event.request";
-import { EnrollEventRequest } from "../models/event/enroll-event.request";
-import { ResignEventRequest } from "../models/event/resign-event.request";
+import { EventViewModel } from "../../models/event/event-view.model";
+import { CreateEventRequest } from "../../models/event/create-event.request";
+import { UpdateEventRequest } from "../../models/event/update-event.request";
+import { DeleteEventRequest } from "../../models/event/delete-event.request";
+import { EnrollEventRequest } from "../../models/event/enroll-event.request";
+import { ResignEventRequest } from "../../models/event/resign-event.request";
 
 @Injectable({
   providedIn: 'root'

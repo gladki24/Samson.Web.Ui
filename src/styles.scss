@@ -2,3 +2,9 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@for $widthPx from 0 through 100 {
+  .width-#{$widthPx} {
+    width: round(percentage($widthPx) / 100);
+  }
+}

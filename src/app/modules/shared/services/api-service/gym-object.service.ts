@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { ControllerCommunicationServiceBase } from "./controller-communication-service.base";
-import { ApiService } from "./api.service";
+import { ApiService } from "../api.service";
 import { Observable } from "rxjs";
-import { GymObjectViewModel } from "../models/gym-object/gym-object-view.model";
+import { GymObjectViewModel } from "../../models/gym-object/gym-object-view.model";
 import { map } from "rxjs/operators";
-import { GymRoomViewModel } from "../models/gym-room/gym-room-view.model";
-import { CreateGymObjectRequest } from "../models/gym-object/create-gym-object.request";
-import { UpdateGymObjectRequest } from "../models/gym-object/update-gym-object.request";
-import { DeleteGymObjectRequest } from "../models/gym-object/delete-gym-object.request";
-import { AddGymRoomRequest } from "../models/gym-room/add-gym-room.request";
-import { RemoveGymRoomRequest } from "../models/gym-room/remove-gym-room.request";
+import { GymRoomViewModel } from "../../models/gym-room/gym-room-view.model";
+import { CreateGymObjectRequest } from "../../models/gym-object/create-gym-object.request";
+import { UpdateGymObjectRequest } from "../../models/gym-object/update-gym-object.request";
+import { DeleteGymObjectRequest } from "../../models/gym-object/delete-gym-object.request";
+import { AddGymRoomRequest } from "../../models/gym-room/add-gym-room.request";
+import { RemoveGymRoomRequest } from "../../models/gym-room/remove-gym-room.request";
 
 @Injectable({
   providedIn: 'root'

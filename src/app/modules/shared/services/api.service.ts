@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { environment } from "../../../../environments/environment";
 
@@ -13,6 +13,9 @@ export class ApiService {
    * @private
    */
   private readonly _apiUrl = environment.apiUrl;
+  private readonly httpOptions = {
+    headers: new HttpHeaders({'Content-Type': 'application/json'})
+  }
 
   public constructor(
     private readonly _httpClient: HttpClient
@@ -24,7 +27,7 @@ export class ApiService {
    * @param endpointUrl API endpoint
    */
   public get<TResponse>(endpointUrl: string): Observable<TResponse> {
-    return this._httpClient.get<TResponse>(this._prepareApiUrl(endpointUrl));
+    return this._httpClient.get<TResponse>(this._prepareApiUrl(endpointUrl), this.httpOptions);
   }
 
   /**
@@ -33,7 +36,7 @@ export class ApiService {
    * @param body request body
    */
   public post<TRequest, TResponse>(endpointUrl: string, body: TRequest): Observable<TResponse> {
-    return this._httpClient.post<TResponse>(this._prepareApiUrl(endpointUrl), JSON.stringify(body));
+    return this._httpClient.post<TResponse>(this._prepareApiUrl(endpointUrl), JSON.stringify(body), this.httpOptions);
   }
 
   /**
@@ -43,7 +46,8 @@ export class ApiService {
    */
   public delete<TRequest, TResponse>(endpointUrl: string, body: TRequest): Observable<TResponse> {
     return this._httpClient.delete<TResponse>(this._prepareApiUrl(endpointUrl), {
-      body: JSON.stringify(body)
+      body: JSON.stringify(body),
+      headers: this.httpOptions.headers
     });
   }
 
@@ -53,7 +57,7 @@ export class ApiService {
    * @param body request body
    */
   public put<TRequest, TResponse>(endpointUrl: string, body: TRequest): Observable<TResponse> {
-    return this._httpClient.put<TResponse>(this._prepareApiUrl(endpointUrl), JSON.stringify(body));
+    return this._httpClient.put<TResponse>(this._prepareApiUrl(endpointUrl), JSON.stringify(body), this.httpOptions);
   }
 
   /**

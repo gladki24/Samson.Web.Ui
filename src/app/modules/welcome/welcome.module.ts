@@ -10,6 +10,10 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { SharedModule } from "../shared/shared.module";
+import { ReactiveFormsModule } from "@angular/forms";
+import { NgxsModule } from "@ngxs/store";
+import { ClientState } from "./states/client.state";
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -26,7 +30,10 @@ import { SharedModule } from "../shared/shared.module";
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    NgxsModule.forFeature([ClientState])
   ]
 })
 export class WelcomeModule {

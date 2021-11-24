@@ -1,28 +1,38 @@
-
 <main class="register-container">
   <mat-card class="register-card">
-    <mat-card-title class="title">Rejestracja</mat-card-title>
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+      <mat-card-title class="title">Rejestracja</mat-card-title>
+      <mat-card-subtitle>Utwórz konto aby móc korzystać z możliwości serwisu internetowego.</mat-card-subtitle>
 
-    <mat-card-content>
-      <form>
-        <app-field label="Nazwa użytkownika"></app-field>
+      <mat-card-content>
+        <mat-form-field class="width-100">
+          <mat-label>Nazwa użytkownika</mat-label>
+          <input matInput formControlName="login">
+        </mat-form-field>
 
-        <app-field label="Imię"></app-field>
+        <mat-form-field class="width-100">
+          <mat-label>Imię</mat-label>
+          <input matInput formControlName="name">
+        </mat-form-field>
 
-        <app-field label="Nazwisko"></app-field>
+        <mat-form-field class="width-100">
+          <mat-label>Nazwisko</mat-label>
+          <input matInput formControlName="surname">
+        </mat-form-field>
 
-        <app-field label="Hasło"></app-field>
+        <mat-form-field class="width-100">
+          <mat-label>Hasło</mat-label>
+          <input matInput type="password" formControlName="password">
+        </mat-form-field>
+      </mat-card-content>
 
-        <app-field label="Powtórz hasło"></app-field>
-      </form>
-    </mat-card-content>
+      <mat-divider></mat-divider>
 
-    <mat-divider></mat-divider>
-
-    <mat-card-actions align="end">
-      <a routerLink="../login" mat-button>Mam już konto</a>
-      <button mat-flat-button color="primary">Utwórz konto</button>
-    </mat-card-actions>
+      <mat-card-actions align="end">
+        <a routerLink="../login" mat-button>Mam już konto</a>
+        <button mat-flat-button color="primary" type="submit">Utwórz konto</button>
+      </mat-card-actions>
+    </form>
   </mat-card>
 </main>
 

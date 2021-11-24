@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { ControllerCommunicationServiceBase } from "./controller-communication-service.base";
-import { ApiService } from "./api.service";
+import { ApiService } from "../api.service";
 import { Observable } from "rxjs";
-import { PersonalTrainerViewModel } from "../models/personal-trainer/personal-trainer-view.model";
+import { PersonalTrainerViewModel } from "../../models/personal-trainer/personal-trainer-view.model";
 import { map } from "rxjs/operators";
-import { CreatePersonalTrainerRequest } from "../models/personal-trainer/create-personal-trainer.request";
-import { UpdatePersonalTrainerRequest } from "../models/personal-trainer/update-personal-trainer.request";
-import { DeletePersonalTrainerRequest } from "../models/personal-trainer/delete-personal-trainer.request";
+import { CreatePersonalTrainerRequest } from "../../models/personal-trainer/create-personal-trainer.request";
+import { UpdatePersonalTrainerRequest } from "../../models/personal-trainer/update-personal-trainer.request";
+import { DeletePersonalTrainerRequest } from "../../models/personal-trainer/delete-personal-trainer.request";
 
 @Injectable({
   providedIn: 'root'

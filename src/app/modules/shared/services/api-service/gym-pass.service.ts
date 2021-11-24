@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { ControllerCommunicationServiceBase } from "./controller-communication-service.base";
-import { ApiService } from "./api.service";
+import { ApiService } from "../api.service";
 import { Observable } from "rxjs";
-import { GymPassViewModel } from "../models/gym-pass/gym-pass-view.model";
+import { GymPassViewModel } from "../../models/gym-pass/gym-pass-view.model";
 import { map } from "rxjs/operators";
-import { CreateGymPassRequest } from "../models/gym-pass/create-gym-pass.request";
-import { UpdateGymPassRequest } from "../models/gym-pass/update-gym-pass.request";
-import { DeleteGymPassRequest } from "../models/gym-pass/delete-gym-pass.request";
+import { CreateGymPassRequest } from "../../models/gym-pass/create-gym-pass.request";
+import { UpdateGymPassRequest } from "../../models/gym-pass/update-gym-pass.request";
+import { DeleteGymPassRequest } from "../../models/gym-pass/delete-gym-pass.request";
 
 @Injectable({
   providedIn: 'root'

@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { ApiService } from "./api.service";
-import { RegisterClientRequest } from "../models/client/register-client.request";
+import { ApiService } from "../api.service";
+import { RegisterClientRequest } from "../../models/client/register-client.request";
 import { Observable } from "rxjs";
 import { ControllerCommunicationServiceBase } from "./controller-communication-service.base";
-import { UpdateClientRequest } from "../models/client/update-client.request";
-import { DeleteClientRequest } from "../models/client/delete-client.request";
-import { ExtendClientPassRequest } from "../models/client/extend-client-pass.request";
-import { ClientViewModel } from "../models/client/client-view.model";
+import { UpdateClientRequest } from "../../models/client/update-client.request";
+import { DeleteClientRequest } from "../../models/client/delete-client.request";
+import { ExtendClientPassRequest } from "../../models/client/extend-client-pass.request";
+import { ClientViewModel } from "../../models/client/client-view.model";
 import { map } from "rxjs/operators";
 
 @Injectable({

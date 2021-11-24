@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { ControllerCommunicationServiceBase } from "./controller-communication-service.base";
-import { ApiService } from "./api.service";
+import { ApiService } from "../api.service";
 import { Observable } from "rxjs";
-import { IndividualTrainingViewModel } from "../models/individual-training/individual-training-view.model";
+import { IndividualTrainingViewModel } from "../../models/individual-training/individual-training-view.model";
 import { map } from "rxjs/operators";
-import { CreateIndividualTrainingRequest } from "../models/individual-training/create-individual-training.request";
-import { UpdateIndividualTrainingRequest } from "../models/individual-training/update-individual-training.request";
-import { CancelIndividualTrainingRequest } from "../models/individual-training/cancel-individual-training.request";
-import { EnrollIndividualTrainingRequest } from "../models/individual-training/enroll-individual-training.request";
-import { ConfirmIndividualTrainingRequest } from "../models/individual-training/confirm-individual-training.request";
+import { CreateIndividualTrainingRequest } from "../../models/individual-training/create-individual-training.request";
+import { UpdateIndividualTrainingRequest } from "../../models/individual-training/update-individual-training.request";
+import { CancelIndividualTrainingRequest } from "../../models/individual-training/cancel-individual-training.request";
+import { EnrollIndividualTrainingRequest } from "../../models/individual-training/enroll-individual-training.request";
+import { ConfirmIndividualTrainingRequest } from "../../models/individual-training/confirm-individual-training.request";
 
 @Injectable({
   providedIn: 'root'

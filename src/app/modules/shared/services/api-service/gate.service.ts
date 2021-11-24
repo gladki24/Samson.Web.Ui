@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { ControllerCommunicationServiceBase } from "./controller-communication-service.base";
-import { ApiService } from "./api.service";
+import { ApiService } from "../api.service";
 import { Observable } from "rxjs";
-import { EntranceValidationInfoViewModel } from "../models/gate/entrance-validation-info-view.model";
-import { GateEntryRequest } from "../models/gate/gate-entry.request";
-import { GateExitRequest } from "../models/gate/gate-exit.request";
+import { EntranceValidationInfoViewModel } from "../../models/gate/entrance-validation-info-view.model";
+import { GateEntryRequest } from "../../models/gate/gate-entry.request";
+import { GateExitRequest } from "../../models/gate/gate-exit.request";
 import { map } from "rxjs/operators";
 
 @Injectable({
