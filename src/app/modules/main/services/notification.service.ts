@@ -4,13 +4,13 @@ import { NotificationService } from "../../../services/notification.service";
 @Injectable({
   providedIn: 'root'
 })
-export class LoginNotificationService {
+export class MainNotificationService {
 
   public constructor(
     private readonly _notificationService: NotificationService
   ) { }
 
-  public notifyUserLogged(): void {
-    this._notificationService.showSuccess("Zalogowano do systemu");
+  public notifyLogout(): void {
+    this._notificationService.showSuccess('Wylogowano');
   }
 }

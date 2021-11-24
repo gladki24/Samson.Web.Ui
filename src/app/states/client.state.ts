@@ -1,8 +1,8 @@
 import { Action, Selector, State, StateContext } from "@ngxs/store";
-import { ClientViewModel } from "../../shared/models/client/client-view.model";
-import { ClientService } from "../../shared/services/api-service/client.service";
+import { ClientViewModel } from "../modules/shared/models/client/client-view.model";
+import { ClientService } from "../modules/shared/services/api-service/client.service";
 import { Client } from "../actions/client.actions";
-import { ClientRequestFactory } from "../../shared/utils/client-request-factory";
+import { ClientRequestFactory } from "../modules/shared/utils/client-request-factory";
 import { Observable } from "rxjs";
 import { tap } from "rxjs/operators";
 import { flatMap } from "rxjs/internal/operators";

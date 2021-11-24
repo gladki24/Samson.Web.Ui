@@ -1,6 +1,6 @@
-<main class="register-container">
-  <mat-card class="register-card">
-    <form [formGroup]="registerForm" (ngSubmit)="register()">
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+  <main class="register-container">
+    <mat-card class="register-card">
       <mat-card-title class="title">Rejestracja</mat-card-title>
       <mat-card-subtitle>Utwórz konto aby móc korzystać z możliwości serwisu internetowego.</mat-card-subtitle>
 
@@ -32,8 +32,9 @@
         <a routerLink="../login" mat-button>Mam już konto</a>
         <button mat-flat-button color="primary" type="submit">Utwórz konto</button>
       </mat-card-actions>
-    </form>
-  </mat-card>
-</main>
+
+    </mat-card>
+  </main>
+</form>
 
 

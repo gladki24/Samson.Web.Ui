@@ -11,8 +11,6 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { SharedModule } from "../shared/shared.module";
 import { ReactiveFormsModule } from "@angular/forms";
-import { NgxsModule } from "@ngxs/store";
-import { ClientState } from "./states/client.state";
 import { HttpClientModule } from "@angular/common/http";
 
 
@@ -32,8 +30,7 @@ import { HttpClientModule } from "@angular/common/http";
     MatInputModule,
     SharedModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    NgxsModule.forFeature([ClientState])
+    ReactiveFormsModule
   ]
 })
 export class WelcomeModule {

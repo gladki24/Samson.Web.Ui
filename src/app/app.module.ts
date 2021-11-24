@@ -9,6 +9,9 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { ApplicationErrorHandler } from "./utils/error-handler";
 import { ServerErrorInterceptor } from "./interceptors/server-error.interceptor";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { ClientState } from "./states/client.state";
+import { NgxsStoragePluginModule } from "@ngxs/storage-plugin";
+import { LoginState } from "./states/login.state";
 
 @NgModule({
   declarations: [
@@ -20,8 +23,11 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
     BrowserAnimationsModule,
     HttpClientModule,
     MatSnackBarModule,
-    NgxsModule.forRoot([], {
+    NgxsModule.forRoot([ClientState, LoginState], {
       developmentMode: !environment.production
+    }),
+    NgxsStoragePluginModule.forRoot({
+      key: 'login.token'
     })
   ],
   providers: [

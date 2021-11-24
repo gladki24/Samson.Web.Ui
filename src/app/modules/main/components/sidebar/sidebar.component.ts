@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { SidebarService } from "../../services/sidebar.service";
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { MenuService } from "../../services/menu.service";
 import { MenuButton } from "../../models/menu-button.model";
+import { Icon } from "../../../shared/enums/icon.enum";
 
 /**
  * Sidebar component
@@ -12,27 +13,28 @@ import { MenuButton } from "../../models/menu-button.model";
 })
 export class SidebarComponent implements OnInit {
 
-  /**
-   * Menu's buttons
-   */
+  @Output() public close = new EventEmitter<void>();
+
   public get buttons(): MenuButton[] {
     return this._service.buttons;
   }
 
-  /**
-   * Default constructor
-   * @param _service logic service of sidebar component
-   */
+  public readonly Icon = Icon;
+
   public constructor(
-    private readonly _service: SidebarService
+    private readonly _service: MenuService
   ) {
   }
 
-  /**
-   * Initialize menu buttons on component OnInit
-   */
   public ngOnInit(): void {
     this._service.buildMenuButtons();
   }
 
+  public logout(): void {
+    this._service.logout();
+  }
+
+  public closeSidebar(): void {
+    this.close.emit();
+  }
 }

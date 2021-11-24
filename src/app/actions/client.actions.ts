@@ -1,5 +1,5 @@
-import { ClientRegistrationViewModel } from "../models/client-registration-view.model";
-import { ClientUpdateViewModel } from "../models/client-update-view.model";
+import { ClientRegistrationViewModel } from "../modules/welcome/models/client-registration-view.model";
+import { ClientUpdateViewModel } from "../modules/welcome/models/client-update-view.model";
 
 export namespace Client {
 

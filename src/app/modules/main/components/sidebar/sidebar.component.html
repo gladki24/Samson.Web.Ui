@@ -3,7 +3,12 @@
      *ngFor="let button of buttons"
      routerLinkActive="sidebar-button-text--active"
      [routerLink]="button.url"
+     (click)="closeSidebar()"
   >
     <mat-icon>{{ button.icon }}</mat-icon> <span class="sidebar-button-text">{{ button.text }}</span>
+  </a>
+
+  <a mat-list-item (click)="logout()" routerLink="/welcome/login">
+    <mat-icon>{{ Icon.Logout }}</mat-icon> <span class="sidebar-button-text">Wyloguj</span>
   </a>
 </mat-nav-list>

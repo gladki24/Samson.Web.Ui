@@ -11,25 +11,41 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatListModule } from "@angular/material/list";
 import { LayoutModule } from '@angular/cdk/layout';
+import { EventComponent } from './pages/event/event.component';
+import { GateComponent } from './pages/gate/gate.component';
+import { ManagementComponent } from './pages/management/management.component';
+import { GymPassComponent } from './pages/gym-pass/gym-pass.component';
+import { IndividualTrainingComponent } from './pages/individual-training/individual-training.component';
+import { AccountComponent } from './pages/account/account.component';
+import { MatCardModule } from "@angular/material/card";
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 
 @NgModule({
   declarations: [
     MainComponent,
     ToolbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    EventComponent,
+    GateComponent,
+    ManagementComponent,
+    GymPassComponent,
+    IndividualTrainingComponent,
+    AccountComponent,
+    DashboardComponent
   ],
-  imports: [
-    CommonModule,
-    MainRoutingModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatMenuModule,
-    MatListModule,
-    LayoutModule
-  ]
+    imports: [
+        CommonModule,
+        MainRoutingModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatIconModule,
+        MatSidenavModule,
+        MatMenuModule,
+        MatListModule,
+        LayoutModule,
+        MatCardModule
+    ]
 })
 export class MainModule {
 }
