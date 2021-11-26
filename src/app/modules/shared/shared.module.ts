@@ -9,6 +9,9 @@ import { MatSelectModule } from "@angular/material/select";
 import { SelectBoxComponent } from './components/inputs/select-box/select-box.component';
 import { TextBoxComponent } from './components/inputs/text-box/text-box.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { RadioBoxComponent } from './components/inputs/radio-box/radio-box.component';
+import { MatRadioModule } from "@angular/material/radio";
+import { YesNoPipe } from './pipes/yes-no.pipe';
 
 
 
@@ -17,11 +20,15 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
     GymObjectSelectComponent,
       SelectBoxComponent,
-      TextBoxComponent
+      TextBoxComponent,
+      RadioBoxComponent,
+      YesNoPipe
   ],
   exports: [
     GymObjectSelectComponent,
-    TextBoxComponent
+    TextBoxComponent,
+    RadioBoxComponent,
+    YesNoPipe
   ],
   imports: [
     CommonModule,
@@ -31,7 +38,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     HttpClientModule,
     MatSelectModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatRadioModule
   ]
 })
 export class SharedModule { }

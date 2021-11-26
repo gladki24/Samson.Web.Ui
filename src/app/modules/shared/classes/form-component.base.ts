@@ -16,4 +16,8 @@ export abstract class FormComponentBase {
   public getFormControl(formControlName: string): FormControl {
     return this.form.get(formControlName) as FormControl;
   }
+
+  public getValue<TValue>(formControlName: string): TValue {
+    return this.form.value[formControlName];
+  }
 }

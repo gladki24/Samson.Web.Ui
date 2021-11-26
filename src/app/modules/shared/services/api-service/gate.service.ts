@@ -24,10 +24,8 @@ export class GateService extends ControllerCommunicationServiceBase {
     )
   }
 
-  public exit(request: GateExitRequest): Observable<EntranceValidationInfoViewModel> {
-    return this._apiService.post<GateExitRequest, EntranceValidationInfoViewModel>(this.getUrl('exit'), request).pipe(
-      map(info => new EntranceValidationInfoViewModel(info))
-    )
+  public exit(request: GateExitRequest): Observable<void> {
+    return this._apiService.post<GateExitRequest, void>(this.getUrl('exit'), request);
   }
 
   public validEntrance(request: GateEntryRequest): Observable<EntranceValidationInfoViewModel> {

@@ -1,4 +1,13 @@
 <form [formGroup]="form" (ngSubmit)="configure()">
+
+  <app-radio-box
+    label="Typ bramki"
+    [control]="getFormControl('type')"
+    displayExpr="name"
+    valueExpr="value"
+    [items]="gateTypeItems"
+  ></app-radio-box>
+
   <app-gym-object-select
     [control]="getFormControl('gymObject')"
   ></app-gym-object-select>

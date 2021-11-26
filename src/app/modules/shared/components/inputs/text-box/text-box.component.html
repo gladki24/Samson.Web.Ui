@@ -2,6 +2,6 @@
   <mat-label>{{ label }}</mat-label>
   <input matInput [type]="type" [formControl]="control">
   <mat-error *ngIf="control.errors?.required">
-    {{ label }} jest polem obowiązkowym
+    Pole <strong>{{ label?.toLowerCase() }}</strong> jest polem <strong>obowiązkowym</strong>.
   </mat-error>
 </mat-form-field>

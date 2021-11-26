@@ -7,4 +7,34 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .width-#{$widthPx} {
     width: round(percentage($widthPx) / 100);
   }
-}
+};
+
+@for $rem from 1 through 10 {
+  .margin-y-#{$rem} {
+    margin: #{$rem}rem 0;
+  }
+
+  .margin-x-#{$rem} {
+    margin: 0 #{$rem}rem;
+  }
+
+  .margin-#{$rem} {
+    margin: #{$rem}rem;
+  }
+
+  .margin-top-#{$rem} {
+    margin-top: #{$rem}rem;
+  }
+
+  .margin-left-#{$rem} {
+    margin-left: #{$rem}rem;
+  }
+
+  .margin-right-#{$rem} {
+    margin-right: #{$rem}rem;
+  }
+
+  .margin-bottom-#{$rem} {
+    margin-bottom: #{$rem}rem;
+  }
+};

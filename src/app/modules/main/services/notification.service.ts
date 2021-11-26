@@ -13,4 +13,8 @@ export class MainNotificationService {
   public notifyLogout(): void {
     this._notificationService.showSuccess('Wylogowano');
   }
+
+  public notifyGateCross(): void {
+    this._notificationService.showSuccess('Przejdź przez bramkę');
+  }
 }

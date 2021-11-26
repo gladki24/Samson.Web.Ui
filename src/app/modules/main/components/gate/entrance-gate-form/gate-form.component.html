@@ -1,0 +1,11 @@
+<article>
+  <form [formGroup]="form" (ngSubmit)="setUser()">
+    <app-text-box
+      label="Identyfikator użytkownika"
+      [control]="getFormControl('user')"></app-text-box>
+
+    <button mat-flat-button [disabled]="form.invalid" color="primary">
+      Sprawdź
+    </button>
+  </form>
+</article>

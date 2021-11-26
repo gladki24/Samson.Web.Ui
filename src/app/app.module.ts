@@ -12,6 +12,7 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { ClientState } from "./states/client.state";
 import { NgxsStoragePluginModule } from "@ngxs/storage-plugin";
 import { LoginState } from "./states/login.state";
+import { GateState } from "./states/gate.state";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { LoginState } from "./states/login.state";
     BrowserAnimationsModule,
     HttpClientModule,
     MatSnackBarModule,
-    NgxsModule.forRoot([ClientState, LoginState], {
+    NgxsModule.forRoot([ClientState, LoginState, GateState], {
       developmentMode: !environment.production
     }),
     NgxsStoragePluginModule.forRoot({

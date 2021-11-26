@@ -1,0 +1,6 @@
+<label>{{ label }}:</label>
+<mat-radio-group [formControl]="control" class="radio-box-group">
+  <mat-radio-button *ngFor="let item of items" [value]="item[valueExpr]" class="radio-box-item">
+    {{ item[displayExpr] }}
+  </mat-radio-button>
+</mat-radio-group>

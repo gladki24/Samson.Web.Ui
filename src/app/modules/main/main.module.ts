@@ -24,6 +24,10 @@ import { MatInputModule } from "@angular/material/input";
 import { ReactiveFormsModule } from "@angular/forms";
 import { SharedModule } from "../shared/shared.module";
 import { ConfigureGateFormComponent } from './components/gate/configure-gate-form/configure-gate-form.component';
+import { MatRadioModule } from "@angular/material/radio";
+import { EntranceGateComponent } from './pages/gates/entrance-gate/entrance-gate.component';
+import { ExitGateComponent } from './pages/gates/exit-gate/exit-gate.component';
+import { GateFormComponent } from './components/gate/entrance-gate-form/gate-form.component';
 
 
 @NgModule({
@@ -38,7 +42,10 @@ import { ConfigureGateFormComponent } from './components/gate/configure-gate-for
     IndividualTrainingComponent,
     AccountComponent,
     DashboardComponent,
-    ConfigureGateFormComponent
+    ConfigureGateFormComponent,
+    EntranceGateComponent,
+    ExitGateComponent,
+    GateFormComponent
   ],
   imports: [
     CommonModule,
@@ -54,7 +61,8 @@ import { ConfigureGateFormComponent } from './components/gate/configure-gate-for
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    MatRadioModule
   ]
 })
 export class MainModule {
