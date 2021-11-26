@@ -1,0 +1,7 @@
+<mat-form-field class="width-100">
+  <mat-label>{{ label }}</mat-label>
+  <input matInput [type]="type" [formControl]="control">
+  <mat-error *ngIf="control.errors?.required">
+    {{ label }} jest polem obowiązkowym
+  </mat-error>
+</mat-form-field>

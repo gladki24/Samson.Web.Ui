@@ -1,0 +1,9 @@
+<form [formGroup]="form" (ngSubmit)="configure()">
+  <app-gym-object-select
+    [control]="getFormControl('gymObject')"
+  ></app-gym-object-select>
+
+  <button mat-flat-button color="primary" [disabled]="invalid">
+    Uruchom tryb bramki
+  </button>
+</form>

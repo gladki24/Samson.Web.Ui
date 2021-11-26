@@ -19,6 +19,11 @@ import { IndividualTrainingComponent } from './pages/individual-training/individ
 import { AccountComponent } from './pages/account/account.component';
 import { MatCardModule } from "@angular/material/card";
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { ReactiveFormsModule } from "@angular/forms";
+import { SharedModule } from "../shared/shared.module";
+import { ConfigureGateFormComponent } from './components/gate/configure-gate-form/configure-gate-form.component';
 
 
 @NgModule({
@@ -32,20 +37,25 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     GymPassComponent,
     IndividualTrainingComponent,
     AccountComponent,
-    DashboardComponent
+    DashboardComponent,
+    ConfigureGateFormComponent
   ],
-    imports: [
-        CommonModule,
-        MainRoutingModule,
-        MatToolbarModule,
-        MatButtonModule,
-        MatIconModule,
-        MatSidenavModule,
-        MatMenuModule,
-        MatListModule,
-        LayoutModule,
-        MatCardModule
-    ]
+  imports: [
+    CommonModule,
+    MainRoutingModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatMenuModule,
+    MatListModule,
+    LayoutModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    SharedModule
+  ]
 })
 export class MainModule {
 }

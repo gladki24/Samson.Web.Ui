@@ -1,0 +1,11 @@
+<mat-form-field class="width-100">
+  <mat-label>{{ label }}</mat-label>
+  <mat-select [formControl]="control">
+    <mat-option *ngFor="let item of items" [value]="item[valueExpr]">
+      {{ item[displayExpr] }}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="control.errors?.required">
+    Pole <strong>{{ label?.toLowerCase() }}</strong> jest polem <strong>obowiązkowym</strong>.
+  </mat-error>
+</mat-form-field>

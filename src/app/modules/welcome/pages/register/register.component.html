@@ -1,36 +1,40 @@
-<form [formGroup]="registerForm" (ngSubmit)="register()">
+<form [formGroup]="form" (ngSubmit)="register()">
   <main class="register-container">
     <mat-card class="register-card">
       <mat-card-title class="title">Rejestracja</mat-card-title>
       <mat-card-subtitle>Utwórz konto aby móc korzystać z możliwości serwisu internetowego.</mat-card-subtitle>
 
       <mat-card-content>
-        <mat-form-field class="width-100">
-          <mat-label>Nazwa użytkownika</mat-label>
-          <input matInput formControlName="login">
-        </mat-form-field>
+        <app-text-box
+          type="text"
+          label="Nazwa użytkownika"
+          [control]="getFormControl('login')"
+        ></app-text-box>
 
-        <mat-form-field class="width-100">
-          <mat-label>Imię</mat-label>
-          <input matInput formControlName="name">
-        </mat-form-field>
+        <app-text-box
+          type="text"
+          label="Imię"
+          [control]="getFormControl('name')"
+        ></app-text-box>
 
-        <mat-form-field class="width-100">
-          <mat-label>Nazwisko</mat-label>
-          <input matInput formControlName="surname">
-        </mat-form-field>
+        <app-text-box
+          type="text"
+          label="Nazwisko"
+          [control]="getFormControl('surname')"
+        ></app-text-box>
 
-        <mat-form-field class="width-100">
-          <mat-label>Hasło</mat-label>
-          <input matInput type="password" formControlName="password">
-        </mat-form-field>
+        <app-text-box
+          label="Hasło"
+          type="password"
+          [control]="getFormControl('password')"
+        ></app-text-box>
       </mat-card-content>
 
       <mat-divider></mat-divider>
 
       <mat-card-actions align="end">
         <a routerLink="../login" mat-button>Mam już konto</a>
-        <button mat-flat-button color="primary" type="submit">Utwórz konto</button>
+        <button mat-flat-button color="primary" [disabled]="invalid">Utwórz konto</button>
       </mat-card-actions>
 
     </mat-card>
