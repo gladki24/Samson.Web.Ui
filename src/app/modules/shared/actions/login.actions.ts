@@ -1,4 +1,4 @@
-import { LoginViewModel } from "../modules/welcome/models/login-view.model";
+import { LoginViewModel } from "../../welcome/models/login-view.model";
 
 export namespace Login {
   export class Login {

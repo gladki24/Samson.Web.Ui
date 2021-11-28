@@ -1,10 +1,10 @@
 import { Injectable } from "@angular/core";
 import { Action, Selector, State, StateContext } from "@ngxs/store";
-import { EntranceValidationInfoViewModel } from "../modules/shared/models/gate/entrance-validation-info-view.model";
-import { GateService } from "../modules/shared/services/api-service/gate.service";
+import { EntranceValidationInfoViewModel } from "../models/gate/entrance-validation-info-view.model";
+import { GateService } from "../services/api-service/gate.service";
 import { Observable } from "rxjs";
 import { Gate } from "../actions/gate.actions";
-import { GateRequestFactory } from "../modules/shared/utils/gate-request-factory";
+import { GateRequestFactory } from "../utils/gate-request-factory";
 import { tap } from "rxjs/operators";
 
 class GateViewModel {

@@ -28,6 +28,7 @@ import { MatRadioModule } from "@angular/material/radio";
 import { EntranceGateComponent } from './pages/gates/entrance-gate/entrance-gate.component';
 import { ExitGateComponent } from './pages/gates/exit-gate/exit-gate.component';
 import { GateFormComponent } from './components/gate/entrance-gate-form/gate-form.component';
+import { AccountFormComponent } from './components/account/account-form/account-form.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { GateFormComponent } from './components/gate/entrance-gate-form/gate-for
     ConfigureGateFormComponent,
     EntranceGateComponent,
     ExitGateComponent,
-    GateFormComponent
+    GateFormComponent,
+    AccountFormComponent
   ],
   imports: [
     CommonModule,

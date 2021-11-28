@@ -1,8 +1,8 @@
 import { Action, Selector, State, StateContext } from "@ngxs/store";
-import { ClientViewModel } from "../modules/shared/models/client/client-view.model";
-import { ClientService } from "../modules/shared/services/api-service/client.service";
+import { ClientViewModel } from "../models/client/client-view.model";
+import { ClientService } from "../services/api-service/client.service";
 import { Client } from "../actions/client.actions";
-import { ClientRequestFactory } from "../modules/shared/utils/client-request-factory";
+import { ClientRequestFactory } from "../utils/client-request-factory";
 import { Observable } from "rxjs";
 import { tap } from "rxjs/operators";
 import { flatMap } from "rxjs/internal/operators";
@@ -44,5 +44,23 @@ export class ClientState {
     return this._apiService.register(request).pipe(
       flatMap(id => dispatch(new Client.Get(id)))
     );
+  }
+
+  @Action(Client.Update)
+  public updateClient({patchState, dispatch}: StateContext<ClientViewModel>, { payload }: Client.Update): Observable<void> {
+    const request = ClientRequestFactory.GetUpdateClientRequest(payload.id, payload.name, payload.surname);
+
+    return this._apiService.update(request).pipe(
+      flatMap(() => dispatch(new Client.Get(payload.id)))
+    );
+  }
+
+  @Action(Client.Delete)
+  public deleteClient({patchState, dispatch}: StateContext<ClientViewModel>, { payload }: Client.Delete): Observable<void> {
+    const request = ClientRequestFactory.GetDeleteClientRequest(payload.id, payload.password);
+
+    return this._apiService.delete(request).pipe(
+      flatMap(() => dispatch(new Client.Get(payload.id)))
+    )
   }
 }

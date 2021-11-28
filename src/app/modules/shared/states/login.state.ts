@@ -1,9 +1,9 @@
 import { Action, Selector, State, StateContext } from "@ngxs/store";
 import { Injectable } from "@angular/core";
-import { TokenService } from "../modules/shared/services/api-service/token.service";
+import { TokenService } from "../services/api-service/token.service";
 import { Login } from "../actions/login.actions";
 import { Observable } from "rxjs";
-import { LoginRequestFactory } from "../modules/shared/utils/login-request-factory";
+import { LoginRequestFactory } from "../utils/login-request-factory";
 import { tap } from "rxjs/operators";
 
 class LoginViewModel {

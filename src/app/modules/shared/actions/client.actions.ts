@@ -1,5 +1,6 @@
-import { ClientRegistrationViewModel } from "../modules/welcome/models/client-registration-view.model";
-import { ClientUpdateViewModel } from "../modules/welcome/models/client-update-view.model";
+import { ClientRegistrationViewModel } from "../models/client/client-registration-view.model";
+import { ClientUpdateViewModel } from "../models/client/client-update-view.model";
+import { ClientDeleteViewModel } from "../models/client/client-delete-view.model";
 
 export namespace Client {
 
@@ -27,7 +28,7 @@ export namespace Client {
   export class Delete {
     static readonly type = '[Client] Delete';
 
-    public constructor(public payload: string) {
+    public constructor(public payload: ClientDeleteViewModel) {
     }
   }
 }

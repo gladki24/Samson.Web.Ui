@@ -1,0 +1,4 @@
+<form [formGroup]="form" (ngSubmit)="updateAccount()">
+  <app-text-box [control]="getFormControl('name')"></app-text-box>
+  <app-text-box [control]="getFormControl('surname')"></app-text-box>
+</form>

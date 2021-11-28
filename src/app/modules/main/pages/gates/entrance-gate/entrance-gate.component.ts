@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { GateComponentBase } from "../gate-component.base";
 import { ActivatedRoute } from "@angular/router";
 import { Store } from "@ngxs/store";
-import { Gate } from "../../../../../actions/gate.actions";
+import { Gate } from "../../../../shared/actions/gate.actions";
 import { MainNotificationService } from "../../../services/notification.service";
 
 @Component({

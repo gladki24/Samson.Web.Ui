@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Store } from "@ngxs/store";
-import { LoginState } from "../states/login.state";
+import { LoginState } from "../modules/shared/states/login.state";
 import { WelcomeNavigatorService } from "../modules/welcome/services/navigator.service";
 
 @Injectable({

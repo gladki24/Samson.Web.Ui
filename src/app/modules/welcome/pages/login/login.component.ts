@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from "@angular/forms";
 import { Store } from "@ngxs/store";
-import { Login } from "../../../../actions/login.actions";
+import { Login } from "../../../shared/actions/login.actions";
 import { LoginNotificationService } from "../../services/login-notification.service";
 import { WelcomeNavigatorService } from "../../services/navigator.service";
 import { FormComponentBase } from "../../../shared/classes/form-component.base";

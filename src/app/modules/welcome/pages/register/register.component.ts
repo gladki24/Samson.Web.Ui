@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from "@angular/forms";
 import { Store } from "@ngxs/store";
-import { Client } from "../../../../actions/client.actions";
+import { Client } from "../../../shared/actions/client.actions";
 import { tap } from "rxjs/operators";
 import { WelcomeNavigatorService } from "../../services/navigator.service";
 import { RegistrationNotificationService } from "../../services/registration-notification.service";

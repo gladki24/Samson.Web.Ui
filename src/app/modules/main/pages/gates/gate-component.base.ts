@@ -1,8 +1,8 @@
 import { MainComponentBase } from "../main-component.base";
 import { Store } from "@ngxs/store";
 import { ActivatedRoute } from "@angular/router";
-import { Gate } from "../../../../actions/gate.actions";
-import { GateState } from "../../../../states/gate.state";
+import { Gate } from "../../../shared/actions/gate.actions";
+import { GateState } from "../../../shared/states/gate.state";
 import { Observable } from "rxjs";
 import { EntranceValidationInfoViewModel } from "../../../shared/models/gate/entrance-validation-info-view.model";
 import { Directive, ViewChild } from "@angular/core";

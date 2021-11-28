@@ -9,10 +9,11 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { ApplicationErrorHandler } from "./utils/error-handler";
 import { ServerErrorInterceptor } from "./interceptors/server-error.interceptor";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
-import { ClientState } from "./states/client.state";
+import { ClientState } from "./modules/shared/states/client.state";
 import { NgxsStoragePluginModule } from "@ngxs/storage-plugin";
-import { LoginState } from "./states/login.state";
-import { GateState } from "./states/gate.state";
+import { LoginState } from "./modules/shared/states/login.state";
+import { GateState } from "./modules/shared/states/gate.state";
+import { PersonalTrainerState } from "./modules/shared/states/personal-trainer.state";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { GateState } from "./states/gate.state";
     BrowserAnimationsModule,
     HttpClientModule,
     MatSnackBarModule,
-    NgxsModule.forRoot([ClientState, LoginState, GateState], {
+    NgxsModule.forRoot([ClientState, LoginState, GateState, PersonalTrainerState], {
       developmentMode: !environment.production
     }),
     NgxsStoragePluginModule.forRoot({

@@ -3,7 +3,7 @@ import { MenuBuilderService } from "./menu-builder.service";
 import { MenuButton } from "../models/menu-button.model";
 import { Icon } from "../../shared/enums/icon.enum";
 import { Store } from "@ngxs/store";
-import { Login } from "../../../actions/login.actions";
+import { Login } from "../../shared/actions/login.actions";
 import { MainNotificationService } from "./notification.service";
 
 @Injectable({
