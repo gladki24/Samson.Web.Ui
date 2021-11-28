@@ -29,6 +29,8 @@ import { EntranceGateComponent } from './pages/gates/entrance-gate/entrance-gate
 import { ExitGateComponent } from './pages/gates/exit-gate/exit-gate.component';
 import { GateFormComponent } from './components/gate/entrance-gate-form/gate-form.component';
 import { AccountFormComponent } from './components/account/account-form/account-form.component';
+import { PasswordModalComponent } from './components/account/password-modal/password-modal.component';
+import { MatDialogModule } from "@angular/material/dialog";
 
 
 @NgModule({
@@ -47,7 +49,8 @@ import { AccountFormComponent } from './components/account/account-form/account-
     EntranceGateComponent,
     ExitGateComponent,
     GateFormComponent,
-    AccountFormComponent
+    AccountFormComponent,
+    PasswordModalComponent
   ],
   imports: [
     CommonModule,
@@ -64,7 +67,8 @@ import { AccountFormComponent } from './components/account/account-form/account-
     MatInputModule,
     ReactiveFormsModule,
     SharedModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDialogModule
   ]
 })
 export class MainModule {

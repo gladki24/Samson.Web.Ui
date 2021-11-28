@@ -1,6 +1,8 @@
 import { FormControl, FormGroup } from "@angular/forms";
+import { Directive, OnChanges, SimpleChanges } from "@angular/core";
 
-export abstract class FormComponentBase {
+@Directive()
+export abstract class FormComponentBase implements OnChanges {
 
   public get valid(): boolean {
     return this.form.valid;
@@ -11,6 +13,14 @@ export abstract class FormComponentBase {
   }
 
   public constructor(public readonly form: FormGroup) {
+  }
+
+  public ngOnChanges(changes: SimpleChanges) {
+    Object.keys(changes).forEach(key => {
+      if (this.form.contains(key)) {
+        this.form.controls[key].setValue(changes[key].currentValue);
+      }
+    })
   }
 
   public getFormControl(formControlName: string): FormControl {

@@ -1,1 +1,8 @@
-<app-account-form></app-account-form>
+<app-account-form
+  [id]="(user$ | async)?.id"
+  [name]="(user$ | async)?.name"
+  [surname]="(user$ | async)?.surname"
+  (accountUpdateSubmitted)="updateAccount($event)"
+  (accountDeleteSubmitted)="deleteAccount($event)"
+></app-account-form>
+

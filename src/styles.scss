@@ -5,36 +5,36 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 @for $widthPx from 0 through 100 {
   .width-#{$widthPx} {
-    width: round(percentage($widthPx) / 100);
+    width: round(percentage($widthPx) / 100) !important;
   }
 };
 
 @for $rem from 1 through 10 {
   .margin-y-#{$rem} {
-    margin: #{$rem}rem 0;
+    margin: #{$rem}rem 0 !important;
   }
 
   .margin-x-#{$rem} {
-    margin: 0 #{$rem}rem;
+    margin: 0 #{$rem}rem !important;
   }
 
   .margin-#{$rem} {
-    margin: #{$rem}rem;
+    margin: #{$rem}rem !important;
   }
 
   .margin-top-#{$rem} {
-    margin-top: #{$rem}rem;
+    margin-top: #{$rem}rem !important;
   }
 
   .margin-left-#{$rem} {
-    margin-left: #{$rem}rem;
+    margin-left: #{$rem}rem !important;
   }
 
   .margin-right-#{$rem} {
-    margin-right: #{$rem}rem;
+    margin-right: #{$rem}rem !important;
   }
 
   .margin-bottom-#{$rem} {
-    margin-bottom: #{$rem}rem;
+    margin-bottom: #{$rem}rem !important;
   }
 };

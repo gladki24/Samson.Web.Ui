@@ -17,4 +17,12 @@ export class MainNotificationService {
   public notifyGateCross(): void {
     this._notificationService.showSuccess('Przejdź przez bramkę');
   }
+
+  public notifyUserUpdated(): void {
+    this._notificationService.showSuccess('Konto użytkownika zostało zakutalizowane');
+  }
+
+  public notifyUserDeleted(): void {
+    this._notificationService.showSuccess('Konto użytkownika zostało usunięte');
+  }
 }

@@ -8,10 +8,11 @@ import { PersonalTrainerViewModel } from "../models/personal-trainer/personal-tr
 import { PersonalTrainerService } from "../services/api-service/personal-trainer.service";
 import { PersonalTrainerRequestFactory } from "../utils/personal-trainer-request-factory";
 import { PersonalTrainer } from "../actions/personal-trainer.actions";
+import { Login } from "../actions/login.actions";
 
 
 @State<PersonalTrainerViewModel>({
-  name: 'client'
+  name: 'personalTrainer'
 })
 @Injectable()
 export class PersonalTrainerState {
@@ -19,7 +20,7 @@ export class PersonalTrainerState {
   public constructor(private readonly _apiService: PersonalTrainerService) { }
 
   @Selector()
-  public static getPersonalTrainer(state: PersonalTrainerViewModel) {
+  public static getUser(state: PersonalTrainerViewModel) {
     return state;
   }
 
@@ -51,7 +52,7 @@ export class PersonalTrainerState {
     const request = PersonalTrainerRequestFactory.GetPersonalTrainerUpdateRequest(payload.id, payload.name, payload.surname);
 
     return this._apiService.update(request).pipe(
-      flatMap(() => dispatch(new Client.Get(payload.id)))
+      flatMap(() => dispatch(new PersonalTrainer.Get(payload.id)))
     );
   }
 
@@ -60,7 +61,6 @@ export class PersonalTrainerState {
     const request = PersonalTrainerRequestFactory.GetPersonalTrainerDeleteRequest(payload.id, payload.password);
 
     return this._apiService.delete(request).pipe(
-      flatMap(() => dispatch(new Client.Get(payload.id)))
-    )
+      flatMap(() => dispatch(Login.Logout)));
   }
 }

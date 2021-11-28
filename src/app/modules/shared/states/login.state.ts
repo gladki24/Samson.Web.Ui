@@ -5,6 +5,7 @@ import { Login } from "../actions/login.actions";
 import { Observable } from "rxjs";
 import { LoginRequestFactory } from "../utils/login-request-factory";
 import { tap } from "rxjs/operators";
+import { TokenViewModel } from "../models/token/token-view.model";
 
 class LoginViewModel {
   public token: string | null = null
@@ -19,7 +20,7 @@ class LoginViewModel {
 @Injectable()
 export class LoginState {
   public constructor(
-    private readonly _tokenService: TokenService
+    private readonly _tokenService: TokenService,
   ) {
   }
 
@@ -33,13 +34,20 @@ export class LoginState {
     return !!state.token;
   }
 
+  @Selector()
+  public static tokenData(state: LoginViewModel): TokenViewModel {
+    const token = state.token as string;
+    const data = atob(token.split('.')[1])
+    return JSON.parse(data);
+  }
+
   @Action(Login.Login)
-  public login(ctx: StateContext<LoginViewModel>, { payload }: Login.Login): Observable<string> {
+  public login(ctx: StateContext<LoginViewModel>, {payload}: Login.Login): Observable<string> {
     const request = LoginRequestFactory.GetLoginRequest(payload.login, payload.password);
     return this._tokenService.login(request).pipe(
       tap(result => ctx.patchState({
-        token: result
-      }))
+          token: result
+        })),
     )
   }
 

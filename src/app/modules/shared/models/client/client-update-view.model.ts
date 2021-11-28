@@ -1,5 +1,4 @@
-export interface ClientUpdateViewModel {
-  id: string;
-  surname: string;
-  name: string;
+import { UpdateUserViewModel } from "../user/update-user-view.model";
+
+export interface ClientUpdateViewModel extends UpdateUserViewModel {
 }

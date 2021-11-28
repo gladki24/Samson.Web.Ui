@@ -7,6 +7,7 @@ import { Observable } from "rxjs";
 import { tap } from "rxjs/operators";
 import { flatMap } from "rxjs/internal/operators";
 import { Injectable } from "@angular/core";
+import { Login } from "../actions/login.actions";
 
 
 @State<ClientViewModel>({
@@ -18,12 +19,14 @@ export class ClientState {
   public constructor(private readonly _apiService: ClientService) { }
 
   @Selector()
-  public static getClient(state: ClientViewModel) {
+  public static getUser(state: ClientViewModel) {
     return state;
   }
 
   @Action(Client.Get)
   public getClient({getState, patchState}: StateContext<ClientViewModel>, { payload }: Client.Get) {
+    console.log('get');
+
     return this._apiService.get(payload).pipe(
       tap(result => patchState({
         id: result.id,
@@ -36,14 +39,10 @@ export class ClientState {
   }
 
   @Action(Client.Register)
-  public registerClient({getState, patchState, dispatch}: StateContext<ClientViewModel>, { payload }: Client.Register): Observable<void> {
+  public registerClient({getState, patchState, dispatch}: StateContext<ClientViewModel>, { payload }: Client.Register): Observable<string> {
     const request = ClientRequestFactory.GetRegisterClientRequest(
       payload.name, payload.surname, payload.login, payload.password);
-
-
-    return this._apiService.register(request).pipe(
-      flatMap(id => dispatch(new Client.Get(id)))
-    );
+    return this._apiService.register(request);
   }
 
   @Action(Client.Update)
@@ -60,7 +59,7 @@ export class ClientState {
     const request = ClientRequestFactory.GetDeleteClientRequest(payload.id, payload.password);
 
     return this._apiService.delete(request).pipe(
-      flatMap(() => dispatch(new Client.Get(payload.id)))
+      flatMap(() => dispatch(Login.Logout))
     )
   }
 }

@@ -14,6 +14,9 @@ import { NgxsStoragePluginModule } from "@ngxs/storage-plugin";
 import { LoginState } from "./modules/shared/states/login.state";
 import { GateState } from "./modules/shared/states/gate.state";
 import { PersonalTrainerState } from "./modules/shared/states/personal-trainer.state";
+import { JWT_OPTIONS, JwtHelperService } from "@auth0/angular-jwt";
+import { UserState } from "./modules/shared/states/user.state";
+
 
 @NgModule({
   declarations: [
@@ -25,7 +28,7 @@ import { PersonalTrainerState } from "./modules/shared/states/personal-trainer.s
     BrowserAnimationsModule,
     HttpClientModule,
     MatSnackBarModule,
-    NgxsModule.forRoot([ClientState, LoginState, GateState, PersonalTrainerState], {
+    NgxsModule.forRoot([ClientState, LoginState, GateState, PersonalTrainerState, UserState], {
       developmentMode: !environment.production
     }),
     NgxsStoragePluginModule.forRoot({
@@ -34,6 +37,10 @@ import { PersonalTrainerState } from "./modules/shared/states/personal-trainer.s
   ],
   providers: [
     {
+      provide: JWT_OPTIONS,
+      useValue: JWT_OPTIONS
+    },
+    {
       provide: ErrorHandler,
       useClass: ApplicationErrorHandler,
     },
@@ -41,7 +48,8 @@ import { PersonalTrainerState } from "./modules/shared/states/personal-trainer.s
       provide: HTTP_INTERCEPTORS,
       useClass: ServerErrorInterceptor,
       multi: true
-    }
+    },
+    JwtHelperService
   ],
   bootstrap: [AppComponent]
 })

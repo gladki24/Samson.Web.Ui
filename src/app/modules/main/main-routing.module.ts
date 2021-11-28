@@ -10,7 +10,6 @@ import { IndividualTrainingComponent } from "./pages/individual-training/individ
 import { DashboardComponent } from "./pages/dashboard/dashboard.component";
 import { EntranceGateComponent } from "./pages/gates/entrance-gate/entrance-gate.component";
 import { ExitGateComponent } from "./pages/gates/exit-gate/exit-gate.component";
-
 const routes: Routes = [
   {
     path: '',

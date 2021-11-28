@@ -1,7 +1,4 @@
-export class ClientDeleteViewModel {
-  public constructor(
-    public readonly id: string,
-    public readonly password: string
-  ) {
-  }
+import { DeleteUserViewModel } from "../user/delete-user-view.model";
+
+export interface ClientDeleteViewModel extends DeleteUserViewModel {
 }

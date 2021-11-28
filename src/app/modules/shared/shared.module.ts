@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatCardModule} from "@angular/material/card";
+import { MatCardModule } from "@angular/material/card";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { HttpClientModule } from "@angular/common/http";
@@ -14,15 +14,14 @@ import { MatRadioModule } from "@angular/material/radio";
 import { YesNoPipe } from './pipes/yes-no.pipe';
 
 
-
 @NgModule({
   declarations: [
 
     GymObjectSelectComponent,
-      SelectBoxComponent,
-      TextBoxComponent,
-      RadioBoxComponent,
-      YesNoPipe
+    SelectBoxComponent,
+    TextBoxComponent,
+    RadioBoxComponent,
+    YesNoPipe
   ],
   exports: [
     GymObjectSelectComponent,
@@ -42,4 +41,5 @@ import { YesNoPipe } from './pipes/yes-no.pipe';
     MatRadioModule
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+}
