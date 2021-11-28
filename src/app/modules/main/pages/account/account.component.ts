@@ -31,7 +31,6 @@ export class AccountComponent extends MainComponentBase {
     super('Konto', 'Zarządzaj swoimi danymi');
     const tokenData = this._store.selectSnapshot(LoginState.tokenData);
     const state = getRole(tokenData) === Role.Client ? ClientState.getUser : PersonalTrainerState.getUser;
-
     this.user$ = this._store.select(state);
   }
 

@@ -25,4 +25,8 @@ export class MainNotificationService {
   public notifyUserDeleted(): void {
     this._notificationService.showSuccess('Konto użytkownika zostało usunięte');
   }
+
+  public notifyGymPassExtended(): void {
+    this._notificationService.showSuccess("Karnet został przedłużony");
+  }
 }

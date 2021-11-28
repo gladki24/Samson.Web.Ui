@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RadioBoxComponent } from './components/inputs/radio-box/radio-box.component';
 import { MatRadioModule } from "@angular/material/radio";
 import { YesNoPipe } from './pipes/yes-no.pipe';
+import { NullPipe } from './pipes/null.pipe';
 
 
 @NgModule({
@@ -21,13 +22,15 @@ import { YesNoPipe } from './pipes/yes-no.pipe';
     SelectBoxComponent,
     TextBoxComponent,
     RadioBoxComponent,
-    YesNoPipe
+    YesNoPipe,
+    NullPipe
   ],
   exports: [
     GymObjectSelectComponent,
     TextBoxComponent,
     RadioBoxComponent,
-    YesNoPipe
+    YesNoPipe,
+    NullPipe
   ],
   imports: [
     CommonModule,

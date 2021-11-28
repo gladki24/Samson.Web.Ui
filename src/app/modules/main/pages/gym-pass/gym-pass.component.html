@@ -1,1 +1,40 @@
-<p>gym-pass works!</p>
+<h2>Informacje o karnecie: </h2>
+
+<div>
+  Data rozpoczęcia karnetu: <strong>{{ (client$ | async)?.subscription?.startDate | date: 'dd/MM/yyyy' }}</strong>
+</div>
+<div>
+  Data końca ważności: <strong>{{ (client$ | async)?.subscription?.endDate | date:'dd/MM/yyyy' }}</strong>
+</div>
+
+
+<h2 class="margin-top-1">Dostępne karnety: </h2>
+<div>
+  <app-gym-pass-table (gymPassSelected)="addGymPassToSubscription($event)"></app-gym-pass-table>
+</div>
+
+<ng-container *ngIf="selectedGymPass">
+  <h2 class="margin-top-1" >Wybrany karnet: </h2>
+  <div>
+    Nazwa: <strong> {{ selectedGymPass.name }} </strong>
+  </div>
+
+  <div>
+    Czas trwania: <strong> {{ selectedGymPass.duration }} </strong>
+  </div>
+
+  <div>
+    Cena: <strong> {{ selectedGymPass.price }} </strong>
+  </div>
+
+  <div class="margin-top-1">
+    <button mat-flat-button (click)="confirmBuyGymPass()" color="primary">
+      Zatwierdź zakup karnetu
+    </button>
+  </div>
+</ng-container>
+
+
+
+
+

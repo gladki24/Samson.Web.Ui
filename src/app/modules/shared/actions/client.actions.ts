@@ -1,6 +1,7 @@
 import { ClientRegistrationViewModel } from "../models/client/client-registration-view.model";
 import { ClientUpdateViewModel } from "../models/client/client-update-view.model";
 import { ClientDeleteViewModel } from "../models/client/client-delete-view.model";
+import { ClientExtendGymPassViewModel } from "../models/client/client-extend-gym-pass-view.model";
 
 export namespace Client {
 
@@ -29,6 +30,13 @@ export namespace Client {
     static readonly type = '[Client] Delete';
 
     public constructor(public payload: ClientDeleteViewModel) {
+    }
+  }
+
+  export class ExtendGymPass {
+    static readonly type = '[Client] Extend gym pass';
+
+    public constructor(public payload: ClientExtendGymPassViewModel) {
     }
   }
 }

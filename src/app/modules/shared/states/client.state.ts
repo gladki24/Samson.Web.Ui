@@ -62,4 +62,13 @@ export class ClientState {
       flatMap(() => dispatch(Login.Logout))
     )
   }
+
+  @Action(Client.ExtendGymPass)
+  public extendGymPass(ctx: StateContext<ClientViewModel>, { payload }: Client.ExtendGymPass): Observable<void> {
+    const request = ClientRequestFactory.GetExtendGymPassRequest(payload.clientId, payload.gymPassId);
+
+    return this._apiService.extendPass(request).pipe(
+      flatMap(() => ctx.dispatch(new Client.Get(ctx.getState().id))
+    ));
+  }
 }

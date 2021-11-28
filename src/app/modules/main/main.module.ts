@@ -31,6 +31,8 @@ import { GateFormComponent } from './components/gate/entrance-gate-form/gate-for
 import { AccountFormComponent } from './components/account/account-form/account-form.component';
 import { PasswordModalComponent } from './components/account/password-modal/password-modal.component';
 import { MatDialogModule } from "@angular/material/dialog";
+import { GymPassTableComponent } from './components/gym-pass/gym-pass-table/gym-pass-table.component';
+import { MatTableModule } from "@angular/material/table";
 
 
 @NgModule({
@@ -50,7 +52,8 @@ import { MatDialogModule } from "@angular/material/dialog";
     ExitGateComponent,
     GateFormComponent,
     AccountFormComponent,
-    PasswordModalComponent
+    PasswordModalComponent,
+    GymPassTableComponent
   ],
   imports: [
     CommonModule,
@@ -68,7 +71,8 @@ import { MatDialogModule } from "@angular/material/dialog";
     ReactiveFormsModule,
     SharedModule,
     MatRadioModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule
   ]
 })
 export class MainModule {
