@@ -1,29 +1,44 @@
+<form [formGroup]="form" (ngSubmit)="register()">
+  <main class="register-container">
+    <mat-card class="register-card">
+      <mat-card-title class="title">Rejestracja</mat-card-title>
+      <mat-card-subtitle>Utwórz konto aby móc korzystać z możliwości serwisu internetowego.</mat-card-subtitle>
 
-<main class="register-container">
-  <mat-card class="register-card">
-    <mat-card-title class="title">Rejestracja</mat-card-title>
+      <mat-card-content>
+        <app-text-box
+          type="text"
+          label="Nazwa użytkownika"
+          [control]="getFormControl('login')"
+        ></app-text-box>
 
-    <mat-card-content>
-      <form>
-        <app-field label="Nazwa użytkownika"></app-field>
+        <app-text-box
+          type="text"
+          label="Imię"
+          [control]="getFormControl('name')"
+        ></app-text-box>
 
-        <app-field label="Imię"></app-field>
+        <app-text-box
+          type="text"
+          label="Nazwisko"
+          [control]="getFormControl('surname')"
+        ></app-text-box>
 
-        <app-field label="Nazwisko"></app-field>
+        <app-text-box
+          label="Hasło"
+          type="password"
+          [control]="getFormControl('password')"
+        ></app-text-box>
+      </mat-card-content>
 
-        <app-field label="Hasło"></app-field>
+      <mat-divider></mat-divider>
 
-        <app-field label="Powtórz hasło"></app-field>
-      </form>
-    </mat-card-content>
+      <mat-card-actions align="end">
+        <a routerLink="../login" mat-button>Mam już konto</a>
+        <button mat-flat-button color="primary" [disabled]="invalid">Utwórz konto</button>
+      </mat-card-actions>
 
-    <mat-divider></mat-divider>
-
-    <mat-card-actions align="end">
-      <a routerLink="../login" mat-button>Mam już konto</a>
-      <button mat-flat-button color="primary">Utwórz konto</button>
-    </mat-card-actions>
-  </mat-card>
-</main>
+    </mat-card>
+  </main>
+</form>
 
 

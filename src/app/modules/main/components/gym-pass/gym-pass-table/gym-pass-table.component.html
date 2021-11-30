@@ -1,0 +1,29 @@
+<table mat-table [dataSource]="gymPasses" class="mat-elevation-z8 width-100">
+
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Nazwa </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef> Cena </th>
+    <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="duration">
+    <th mat-header-cell *matHeaderCellDef> Czas trwania (w dniach) </th>
+    <td mat-cell *matCellDef="let element"> {{element.duration}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef> Akcje </th>
+    <td mat-cell *matCellDef="let element">
+      <button *appClientAccess mat-flat-button color="primary" (click)="gymPassSelected.emit(element)">Wybierz</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

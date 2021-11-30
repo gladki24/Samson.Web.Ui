@@ -1,0 +1,18 @@
+<mat-form-field class="width-100">
+  <mat-label>{{ label }}</mat-label>
+  <input
+    matInput
+    [matDatepicker]="picker"
+    [formControl]="control"
+    [disabled]="disabled"
+    [readonly]="readOnly"
+  >
+  <mat-datepicker #picker></mat-datepicker>
+
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+
+  <mat-error *ngIf="control.errors?.required">
+    Pole <strong>{{ label?.toLowerCase() }}</strong> jest polem <strong>obowiązkowym</strong>.
+  </mat-error>
+</mat-form-field>
+

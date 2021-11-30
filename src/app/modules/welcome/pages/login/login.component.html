@@ -1,27 +1,31 @@
+<form (ngSubmit)="login()" [formGroup]="form">
+  <main class="login-container">
+    <mat-card class="login-card">
 
-<main class="login-container">
-  <mat-card class="login-card">
-    <mat-card-title class="title">Logowanie</mat-card-title>
+      <mat-card-title class="title">Logowanie</mat-card-title>
+      <mat-card-subtitle>Zaloguj się do swojego konta</mat-card-subtitle>
+      <mat-card-content>
+        <app-text-box
+          label="Nazwa użytkownika"
+          [control]="getFormControl('login')"
+        ></app-text-box>
 
-    <mat-card-content>
-      <form>
-        <app-field label="Nazwa użytkownika">
+        <app-text-box
+          label="Hasło"
+          type="password"
+          [control]="getFormControl('password')"
+        ></app-text-box>
+      </mat-card-content>
 
-        </app-field>
+      <mat-divider></mat-divider>
 
-        <app-field label="Hasło">
+      <mat-card-actions align="end">
+        <a routerLink="../register" mat-button>Rejestracja</a>
+        <button mat-flat-button color="primary" [disabled]="invalid">Zaloguj</button>
+      </mat-card-actions>
 
-        </app-field>
-      </form>
-    </mat-card-content>
-
-    <mat-divider></mat-divider>
-
-    <mat-card-actions align="end">
-      <a routerLink="../register" mat-button>Rejestracja</a>
-      <button mat-flat-button color="primary">Zaloguj</button>
-    </mat-card-actions>
-  </mat-card>
-</main>
+    </mat-card>
+  </main>
+</form>
 
 

@@ -1,0 +1,17 @@
+<form [formGroup]="form" (ngSubmit)="updateAccount()">
+  <app-text-box
+    label="Imię"
+    [control]="getFormControl('name')"></app-text-box>
+  <app-text-box
+    label="Nazwisko"
+    [control]="getFormControl('surname')"
+  ></app-text-box>
+
+  <button mat-flat-button color="primary" type="submit" class="margin-right-1">
+    Zaktualizuj dane
+  </button>
+
+  <button mat-flat-button color="warn" type="button" (click)="openPassPasswordToDelete()">
+    Usuń konto
+  </button>
+</form>

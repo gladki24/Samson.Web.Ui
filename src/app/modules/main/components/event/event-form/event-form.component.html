@@ -1,0 +1,8 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <app-text-box label="Nazwa" [control]="getFormControl('name')"></app-text-box>
+  <app-date-box label="Data rozpoczęcia" [control]="getFormControl('startDate')"></app-date-box>
+  <app-time-box label="Godzina rozpoczęcia" [control]="getFormControl('startTime')"></app-time-box>
+  <app-date-box label="Data zakończenia" [control]="getFormControl('endDate')"></app-date-box>
+  <app-time-box label="Godzina rozpoczęcia" [control]="getFormControl('endDate')"></app-time-box>
+  <app-text-box label="Maksymalna liczba uczestników" [control]="getFormControl('maximumParticipants')" type="number"></app-text-box>
+</form>

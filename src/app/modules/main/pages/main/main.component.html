@@ -2,10 +2,22 @@
 
 <mat-drawer-container [hasBackdrop]="true" class="main-container">
   <mat-drawer mode="over" class="sidebar-container">
-    <app-sidebar></app-sidebar>
+    <app-sidebar (close)="closeMenu()"></app-sidebar>
   </mat-drawer>
 
   <mat-drawer-content>
-    <router-outlet></router-outlet>
+
+    <main>
+      <mat-card class="main-card">
+        <mat-card-title> {{ title }} </mat-card-title>
+        <mat-card-subtitle> {{ subtitle }} </mat-card-subtitle>
+
+        <mat-divider></mat-divider>
+
+        <mat-card-content class="main-content">
+          <router-outlet (activate)="onActivate($event)"></router-outlet>
+        </mat-card-content>
+      </mat-card>
+    </main>
   </mat-drawer-content>
 </mat-drawer-container>

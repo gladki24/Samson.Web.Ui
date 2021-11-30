@@ -1,0 +1,16 @@
+<app-gate-form
+  (userIdChange)="onUserChange($event)"
+></app-gate-form>
+
+<ng-container *ngIf="validationResult$ | async">
+  <div class="margin-top-2">
+    <p>
+      Aktualna liczba klientów na siłowni: <strong>{{ (validationResult$ | async)?.currentNumberOfClients }}</strong>
+    </p>
+    <p>
+      Maksymalna liczba klientów na siłowni: <strong>{{ (validationResult$ | async)?.maximumNumberOfClients }}</strong>
+    </p>
+  </div>
+
+  <button mat-flat-button color="warn" (click)="onExit()">Wyjdź</button>
+</ng-container>

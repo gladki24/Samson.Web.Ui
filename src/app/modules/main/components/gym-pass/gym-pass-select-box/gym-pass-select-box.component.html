@@ -1,0 +1,10 @@
+<app-select-box
+  [control]="control"
+  [items]="gymPasses$ | async"
+  [value]="value"
+  [readOnly]="readOnly"
+  [disabled]="disabled"
+  label="Karnety"
+  displayExpr="name"
+  valueExpr="id"
+></app-select-box>

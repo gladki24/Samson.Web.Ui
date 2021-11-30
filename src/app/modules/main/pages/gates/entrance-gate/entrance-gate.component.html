@@ -1,0 +1,26 @@
+<app-gate-form
+  (userIdChange)="onUserChange($event)"
+></app-gate-form>
+
+<ng-container *ngIf="validationResult$ | async">
+  <div class="margin-top-2">
+    <p>
+      Aktualna liczba klientów na siłowni: <strong>{{ (validationResult$ | async)?.currentNumberOfClients }}</strong>
+    </p>
+    <p>
+      Maksymalna liczba klientów na siłowni: <strong>{{ (validationResult$ | async)?.maximumNumberOfClients }}</strong>
+    </p>
+    <p>
+      Czy klient ma aktualny karnet: <strong>{{ (validationResult$ | async)?.hasValidPass | yesNo }}</strong>
+    </p>
+    <p>
+      Czy siłownia jest pełna: <strong>{{ (validationResult$ | async)?.isGymFull | yesNo }}</strong>
+    </p>
+
+    <p>
+      <strong>Czy można wejść: {{ ((validationResult$ | async)?.hasValidPass && !(validationResult$ | async)?.isGymFull) | yesNo }}</strong>
+    </p>
+  </div>
+
+  <button (click)="onEntry()" mat-flat-button color="accent">Wejdź</button>
+</ng-container>

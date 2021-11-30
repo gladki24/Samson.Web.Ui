@@ -1,0 +1,20 @@
+<form [formGroup]="form" (ngSubmit)="loadData()">
+  <app-gym-pass-select-box [control]="getFormControl('id')"></app-gym-pass-select-box>
+
+  <button mat-flat-button [disabled]="invalid" color="primary" class="margin-right-1">
+    Edytuj
+  </button>
+
+  <button mat-flat-button [disabled]="invalid" color="warn" type="button" (click)="deleteGymPass()">
+    Usuń
+  </button>
+</form>
+
+<app-gym-pass-form
+  *ngIf="gymPass"
+  [id]="gymPass.id"
+  [name]="gymPass.name"
+  [duration]="gymPass.duration"
+  [price]="gymPass.price"
+  (update)="updateGymPass($event)"
+></app-gym-pass-form>

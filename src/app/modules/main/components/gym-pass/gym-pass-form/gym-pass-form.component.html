@@ -1,0 +1,9 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <app-text-box [control]="getFormControl('name')" label="Nazwa"></app-text-box>
+  <app-text-box type="number" [control]="getFormControl('duration')" label="Czas trwania"></app-text-box>
+  <app-text-box type="number" [control]="getFormControl('price')" label="Cena"></app-text-box>
+
+  <button mat-flat-button type="submit" color="primary" [disabled]="invalid">
+    Aktualizuj
+  </button>
+</form>
