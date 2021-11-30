@@ -33,6 +33,12 @@ import { PasswordModalComponent } from './components/account/password-modal/pass
 import { MatDialogModule } from "@angular/material/dialog";
 import { GymPassTableComponent } from './components/gym-pass/gym-pass-table/gym-pass-table.component';
 import { MatTableModule } from "@angular/material/table";
+import { IndividualTrainingListComponent } from './components/individual-training/individual-training-list/individual-training-list.component';
+import { MatTabsModule } from "@angular/material/tabs";
+import { IndividualTrainingFormComponent } from './components/individual-training/individual-training-form/individual-training-form.component';
+import { GymObjectLookupComponent } from './components/gym-object/gym-object-lookup/gym-object-lookup.component';
+import { PersonalTrainerLookupComponent } from './components/personal-trainer/personal-trainer-lookup/personal-trainer-lookup.component';
+import { IndividualTrainingPipe } from './pipes/individual-trainining.pipe';
 
 
 @NgModule({
@@ -53,27 +59,33 @@ import { MatTableModule } from "@angular/material/table";
     GateFormComponent,
     AccountFormComponent,
     PasswordModalComponent,
-    GymPassTableComponent
+    GymPassTableComponent,
+    IndividualTrainingListComponent,
+    IndividualTrainingFormComponent,
+    GymObjectLookupComponent,
+    PersonalTrainerLookupComponent,
+    IndividualTrainingPipe
   ],
-  imports: [
-    CommonModule,
-    MainRoutingModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatMenuModule,
-    MatListModule,
-    LayoutModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    SharedModule,
-    MatRadioModule,
-    MatDialogModule,
-    MatTableModule
-  ]
+    imports: [
+        CommonModule,
+        MainRoutingModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatIconModule,
+        MatSidenavModule,
+        MatMenuModule,
+        MatListModule,
+        LayoutModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        SharedModule,
+        MatRadioModule,
+        MatDialogModule,
+        MatTableModule,
+        MatTabsModule
+    ]
 })
 export class MainModule {
 }

@@ -13,6 +13,14 @@ import { RadioBoxComponent } from './components/inputs/radio-box/radio-box.compo
 import { MatRadioModule } from "@angular/material/radio";
 import { YesNoPipe } from './pipes/yes-no.pipe';
 import { NullPipe } from './pipes/null.pipe';
+import { PersonalTrainerAccessDirective } from './directivies/personal-trainer-access.directive';
+import { ClientAccessDirective } from './directivies/client-access.directive';
+import { DateBoxComponent } from './components/inputs/date-box/date-box.component';
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatIconModule } from "@angular/material/icon";
+import { MatMomentDateModule } from "@angular/material-moment-adapter";
+import { TimeBoxComponent } from './components/inputs/time-box/time-box.component';
+import { NgxMatTimepickerModule } from "ngx-mat-timepicker";
 
 
 @NgModule({
@@ -23,14 +31,24 @@ import { NullPipe } from './pipes/null.pipe';
     TextBoxComponent,
     RadioBoxComponent,
     YesNoPipe,
-    NullPipe
+    NullPipe,
+    PersonalTrainerAccessDirective,
+    ClientAccessDirective,
+    DateBoxComponent,
+    DateBoxComponent,
+    TimeBoxComponent
   ],
   exports: [
     GymObjectSelectComponent,
     TextBoxComponent,
     RadioBoxComponent,
     YesNoPipe,
-    NullPipe
+    NullPipe,
+    PersonalTrainerAccessDirective,
+    ClientAccessDirective,
+    SelectBoxComponent,
+    DateBoxComponent,
+    TimeBoxComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +59,11 @@ import { NullPipe } from './pipes/null.pipe';
     MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
+    MatIconModule,
+    NgxMatTimepickerModule
   ]
 })
 export class SharedModule {

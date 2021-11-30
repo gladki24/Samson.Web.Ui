@@ -1,6 +1,10 @@
 <mat-form-field class="width-100">
   <mat-label>{{ label }}</mat-label>
-  <mat-select [formControl]="control">
+  <mat-select
+    [formControl]="control"
+    [disabled]="disabled"
+    [value]="value"
+  >
     <mat-option *ngFor="let item of items" [value]="item[valueExpr]">
       {{ item[displayExpr] }}
     </mat-option>

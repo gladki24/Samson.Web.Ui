@@ -9,6 +9,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   }
 };
 
+.none {
+  display: none;
+}
+
 @for $rem from 1 through 10 {
   .margin-y-#{$rem} {
     margin: #{$rem}rem 0 !important;

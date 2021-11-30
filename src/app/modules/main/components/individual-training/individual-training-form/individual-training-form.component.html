@@ -1,0 +1,28 @@
+<form [formGroup]="form" (ngSubmit)="addIndividualTraining()">
+
+  <app-gym-object-select [control]="getFormControl('gymObjectId')"></app-gym-object-select>
+
+  <app-date-box
+    [control]="getFormControl('startDate')"
+    label="Data rozpoczęcia treningu"
+  ></app-date-box>
+
+  <app-time-box
+    [control]="getFormControl('startTime')"
+    label="Godzina rozpoczęcia treningu"
+  ></app-time-box>
+
+  <app-date-box
+    [control]="getFormControl('endDate')"
+    label="Data zakończenia treningu"
+  ></app-date-box>
+
+  <app-time-box
+    [control]="getFormControl('endTime')"
+    label="Godzina zakończenia treningu"
+  ></app-time-box>
+
+  <button mat-flat-button color="primary">
+    Utwórz trening
+  </button>
+</form>

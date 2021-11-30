@@ -7,7 +7,9 @@ export class ClientViewModel extends UserViewModel {
   public constructor(info: ClientViewModel) {
     super(info);
 
-    if (info.subscription)
-      this.subscription = new SubscriptionViewModel(info.subscription);
+    if (!!info) {
+      if (info.subscription)
+        this.subscription = new SubscriptionViewModel(info.subscription);
+    }
   }
 }

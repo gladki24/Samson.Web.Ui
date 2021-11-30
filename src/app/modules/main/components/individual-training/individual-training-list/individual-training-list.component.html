@@ -1,0 +1,72 @@
+<table mat-table [dataSource]="individualTrainings" class="mat-elevation-z8 width-100">
+
+
+  <ng-container matColumnDef="place">
+    <th mat-header-cell *matHeaderCellDef>Siłownia</th>
+    <td mat-cell *matCellDef="let element">
+      <app-gym-object-lookup [gymObjectId]="element.gymObjectId"></app-gym-object-lookup>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="trainer">
+    <th mat-header-cell *matHeaderCellDef>Trener</th>
+    <td mat-cell *matCellDef="let element">
+      <app-personal-trainer-lookup
+        *ngIf="element.personalTrainerId; else emptyPersonalTrainer"
+        [personalTrainerId]="element.personalTrainerId"
+      ></app-personal-trainer-lookup>
+
+      <ng-template #emptyPersonalTrainer>
+        {{ element.personalTrainerId }}
+      </ng-template>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="startDate">
+    <th mat-header-cell *matHeaderCellDef> Rozpoczącie treningu </th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.startDate | date: 'dd.MM.yyyy hh:mm' }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="endDate">
+    <th mat-header-cell *matHeaderCellDef> Zakończenie treningu </th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.endDate | date: 'dd.MM.yyyy hh:mm' }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef> Status </th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.type | individualTraining }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> Akcje </th>
+    <td mat-cell *matCellDef="let element">
+
+      <ng-container *appClientAccess>
+        <button mat-flat-button class="margin-right-1" color="primary" *ngIf="element.isOpen && type === 'all'" (click)="enroll.emit(element.id)">
+          Zapisz się
+        </button>
+      </ng-container>
+
+      <ng-container *appClientAccess>
+        <button mat-flat-button class="margin-right-1" color="primary" *ngIf="element.isPending && type === 'trainer'" (click)="confirm.emit(element.id)">
+          Potwierdź
+        </button>
+      </ng-container>
+
+      <ng-container *appClientAccess>
+        <button mat-flat-button class="margin-right-1" color="primary"  *ngIf="element.isCancellable && type === 'trainer'" (click)="cancel.emit(element.id)">
+          Anuluj
+        </button>
+      </ng-container>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

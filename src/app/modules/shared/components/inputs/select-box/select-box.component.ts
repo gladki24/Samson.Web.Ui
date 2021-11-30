@@ -5,7 +5,7 @@ import { ReactiveInputBase } from "../../../classes/reactive-input.base";
   selector: 'app-select-box',
   templateUrl: './select-box.component.html'
 })
-export class SelectBoxComponent extends ReactiveInputBase<any> {
+export class SelectBoxComponent extends ReactiveInputBase<string> {
 
   @Input() public items: any[] = [];
   @Input() public displayExpr: string = '';

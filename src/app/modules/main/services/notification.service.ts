@@ -29,4 +29,20 @@ export class MainNotificationService {
   public notifyGymPassExtended(): void {
     this._notificationService.showSuccess("Karnet został przedłużony");
   }
+
+  public notifyCreatedIndividualTraining(): void {
+    this._notificationService.showSuccess("Utworzono treining indywidualny");
+  }
+
+  public notifyTrainingEnroll(): void {
+    this._notificationService.showSuccess("Zapisano na trening");
+  }
+
+  public notifyTrainingCancelled(): void {
+    this._notificationService.showSuccess('Anulowano trening');
+  }
+
+  public notifyTraningConfirmed(): void {
+    this._notificationService.showSuccess('Potwierdzono trening');
+  }
 }

@@ -1,1 +1,27 @@
-<p>individual-training works!</p>
+
+<mat-tab-group mat-align-tabs="start" *appClientAccess>
+  <mat-tab label="Dostępne treningi indywidualne">
+    <app-individual-training-list
+      (enroll)="onEnroll($event)"
+      type="all"
+    ></app-individual-training-list>
+  </mat-tab>
+
+  <mat-tab label="Dodaj trening" *appPersonalTrainerAccess>
+    <app-individual-training-form></app-individual-training-form>
+  </mat-tab>
+
+  <mat-tab label="Moje treningi (klient)" *appClientAccess>
+    <app-individual-training-list
+      type="client"
+    ></app-individual-training-list>
+  </mat-tab>
+
+  <mat-tab label="Moje treningi (trener)" *appPersonalTrainerAccess>
+    <app-individual-training-list
+      (cancel)="onCancel($event)"
+      (confirm)="onConfirm($event)"
+      type="trainer"
+    ></app-individual-training-list>
+  </mat-tab>
+</mat-tab-group>

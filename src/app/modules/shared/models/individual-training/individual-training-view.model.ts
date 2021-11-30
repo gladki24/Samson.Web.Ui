@@ -2,6 +2,21 @@ import { IndividualTrainingType } from "../../enums/individual-training-type.enu
 
 export class IndividualTrainingViewModel {
 
+  public get isOpen(): boolean {
+    return this.type === IndividualTrainingType.Open;
+  }
+
+  public get isPending(): boolean {
+    return this.type === IndividualTrainingType.Pending;
+  }
+
+  public get isCancellable(): boolean {
+    return ![
+      IndividualTrainingType.Confirmed,
+      IndividualTrainingType.Cancelled
+    ].includes(this.type);
+  }
+
   public id: string;
   public personalTrainerId: string;
   public clientId: string;

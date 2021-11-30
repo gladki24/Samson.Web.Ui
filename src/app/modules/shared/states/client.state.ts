@@ -25,8 +25,6 @@ export class ClientState {
 
   @Action(Client.Get)
   public getClient({getState, patchState}: StateContext<ClientViewModel>, { payload }: Client.Get) {
-    console.log('get');
-
     return this._apiService.get(payload).pipe(
       tap(result => patchState({
         id: result.id,

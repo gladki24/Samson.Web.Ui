@@ -1,0 +1,8 @@
+<mat-form-field class="width-100">
+  <mat-label>{{ label }}</mat-label>
+  <input matInput name="selected_time_A" [ngxMatTimepicker]="pickerA" [formControl]="control
+"/>
+  <mat-icon matSuffix (click)="pickerA.open()">watch_later
+  </mat-icon>
+</mat-form-field>
+<ngx-mat-timepicker #pickerA></ngx-mat-timepicker>
