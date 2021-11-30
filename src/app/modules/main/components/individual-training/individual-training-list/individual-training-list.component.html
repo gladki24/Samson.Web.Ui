@@ -53,13 +53,13 @@
         </button>
       </ng-container>
 
-      <ng-container *appClientAccess>
+      <ng-container *appPersonalTrainerAccess>
         <button mat-flat-button class="margin-right-1" color="primary" *ngIf="element.isPending && type === 'trainer'" (click)="confirm.emit(element.id)">
           Potwierdź
         </button>
       </ng-container>
 
-      <ng-container *appClientAccess>
+      <ng-container *appPersonalTrainerAccess>
         <button mat-flat-button class="margin-right-1" color="primary"  *ngIf="element.isCancellable && type === 'trainer'" (click)="cancel.emit(element.id)">
           Anuluj
         </button>

@@ -17,6 +17,7 @@ import { PersonalTrainerState } from "./modules/shared/states/personal-trainer.s
 import { JWT_OPTIONS, JwtHelperService } from "@auth0/angular-jwt";
 import { UserState } from "./modules/shared/states/user.state";
 import { IndividualTrainingState } from "./modules/shared/states/individual-training.state";
+import { ExerciseMachineState } from "./modules/shared/states/exercise-machine-state.service";
 
 
 @NgModule({
@@ -29,7 +30,15 @@ import { IndividualTrainingState } from "./modules/shared/states/individual-trai
     BrowserAnimationsModule,
     HttpClientModule,
     MatSnackBarModule,
-    NgxsModule.forRoot([ClientState, LoginState, GateState, PersonalTrainerState, UserState, IndividualTrainingState], {
+    NgxsModule.forRoot([
+      ClientState,
+      LoginState,
+      GateState,
+      PersonalTrainerState,
+      UserState,
+      IndividualTrainingState,
+      ExerciseMachineState
+    ], {
       developmentMode: !environment.production
     }),
     NgxsStoragePluginModule.forRoot({
@@ -54,4 +63,5 @@ import { IndividualTrainingState } from "./modules/shared/states/individual-trai
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

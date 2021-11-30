@@ -1,0 +1,10 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <app-text-box [control]="getFormControl('name')" label="Imię"></app-text-box>
+  <app-text-box [control]="getFormControl('surname')" label="Nazwisko"></app-text-box>
+  <app-text-box [control]="getFormControl('login')" label="Nazwa użytkownika"></app-text-box>
+  <app-text-box type="password" [control]="getFormControl('password')" label="Hasło"></app-text-box>
+
+  <button mat-flat-button type="submit" [disabled]="invalid">
+    Utwórz
+  </button>
+</form>

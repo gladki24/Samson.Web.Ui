@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
 import { IndividualTrainingViewModel } from "../../../../shared/models/individual-training/individual-training-view.model";
 import { Store } from "@ngxs/store";
 import { IndividualTraining } from "../../../../shared/actions/individual-training.actions";
@@ -10,7 +10,7 @@ import { LoginState } from "../../../../shared/states/login.state";
   selector: 'app-individual-training-list',
   templateUrl: './individual-training-list.component.html'
 })
-export class IndividualTrainingListComponent {
+export class IndividualTrainingListComponent implements AfterViewInit {
 
   @Input() public type: 'client' | 'all' | 'trainer' = 'all';
   @Output() public enroll = new EventEmitter<string>();
@@ -26,8 +26,14 @@ export class IndividualTrainingListComponent {
   public constructor(
     private readonly _store: Store
   ) {
-    this._store.dispatch(IndividualTraining.GetAll);
+    this._store.dispatch(new IndividualTraining.GetAll());
+  }
 
+  public ngAfterViewInit(): void {
+    this._updateList();
+  }
+
+  private _updateList(): void {
     const userId = this._store.selectSnapshot(LoginState.tokenData).id;
 
     if (this.type === 'trainer') {

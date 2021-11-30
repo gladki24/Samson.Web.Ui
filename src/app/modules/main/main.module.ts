@@ -39,6 +39,19 @@ import { IndividualTrainingFormComponent } from './components/individual-trainin
 import { GymObjectLookupComponent } from './components/gym-object/gym-object-lookup/gym-object-lookup.component';
 import { PersonalTrainerLookupComponent } from './components/personal-trainer/personal-trainer-lookup/personal-trainer-lookup.component';
 import { IndividualTrainingPipe } from './pipes/individual-trainining.pipe';
+import { EventFormComponent } from './components/event/event-form/event-form.component';
+import { EventListComponent } from './components/event/event-list/event-list.component';
+import { ExerciseMachineFormComponent } from './components/exercise-machine/exercise-machine-form/exercise-machine-form.component';
+import { UpdateExerciseMachineComponent } from './components/exercise-machine/update-exercise-machine/update-exercise-machine.component';
+import { CreateExerciseMachineComponent } from './components/exercise-machine/create-exercise-machine/create-exercise-machine.component';
+import { ExerciseMachineTypeCheckBoxComponent } from './components/exercise-machine/exercise-machine-type-check-box/exercise-machine-type-check-box.component';
+import { ExerciseMachineComponent } from './components/exercise-machine/exercise-machine/exercise-machine.component';
+import { ExerciseMachineSelectBoxComponent } from './components/exercise-machine/exercise-machine-select-box/exercise-machine-select-box.component';
+import { PersonalTrainerFormComponent } from './components/personal-trainer/personal-trainer-form/personal-trainer-form.component';
+import { CreatePersonalTrainerComponent } from './components/personal-trainer/create-personal-trainer/create-personal-trainer.component';
+import { PersonalTrainerComponent } from './components/personal-trainer/personal-trainer/personal-trainer.component';
+import { CreateEventComponent } from './components/event/create-event/create-event.component';
+import { GymRoomSelectBoxComponent } from './components/gym-object/gym-room-select-box/gym-room-select-box.component';
 
 
 @NgModule({
@@ -64,7 +77,20 @@ import { IndividualTrainingPipe } from './pipes/individual-trainining.pipe';
     IndividualTrainingFormComponent,
     GymObjectLookupComponent,
     PersonalTrainerLookupComponent,
-    IndividualTrainingPipe
+    IndividualTrainingPipe,
+    EventFormComponent,
+    EventListComponent,
+    ExerciseMachineFormComponent,
+    UpdateExerciseMachineComponent,
+    CreateExerciseMachineComponent,
+    ExerciseMachineTypeCheckBoxComponent,
+    ExerciseMachineComponent,
+    ExerciseMachineSelectBoxComponent,
+    PersonalTrainerFormComponent,
+    CreatePersonalTrainerComponent,
+    PersonalTrainerComponent,
+    CreateEventComponent,
+    GymRoomSelectBoxComponent
   ],
     imports: [
         CommonModule,

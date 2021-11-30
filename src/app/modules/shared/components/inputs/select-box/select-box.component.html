@@ -3,7 +3,6 @@
   <mat-select
     [formControl]="control"
     [disabled]="disabled"
-    [value]="value"
   >
     <mat-option *ngFor="let item of items" [value]="item[valueExpr]">
       {{ item[displayExpr] }}

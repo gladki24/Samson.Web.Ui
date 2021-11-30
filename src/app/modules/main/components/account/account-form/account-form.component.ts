@@ -8,8 +8,7 @@ import { DeleteUserViewModel } from "../../../../shared/models/user/delete-user-
 
 @Component({
   selector: 'app-account-form',
-  templateUrl: './account-form.component.html',
-  styleUrls: ['./account-form.component.scss']
+  templateUrl: './account-form.component.html'
 })
 export class AccountFormComponent extends FormComponentBase {
 

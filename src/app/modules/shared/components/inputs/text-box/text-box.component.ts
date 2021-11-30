@@ -5,8 +5,10 @@ import { ReactiveInputBase } from "../../../classes/reactive-input.base";
   selector: 'app-text-box',
   templateUrl: './text-box.component.html'
 })
-export class TextBoxComponent extends ReactiveInputBase<string> {
-  @Input() public type: 'text' | 'password' = 'text';
+export class TextBoxComponent extends ReactiveInputBase<string | number> {
+  @Input() public type: 'text' | 'number' | 'password' = 'text';
+  @Input() public min?: number;
+  @Input() public max?: number;
 
   public constructor(
     @Attribute('label') label: string

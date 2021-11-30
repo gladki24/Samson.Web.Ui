@@ -7,6 +7,8 @@
     [value]="value"
     [disabled]="disabled"
     [readonly]="readOnly"
+    [max]="max"
+    [min]="min"
   >
   <mat-error *ngIf="control.errors?.required">
     Pole <strong>{{ label?.toLowerCase() }}</strong> jest polem <strong>obowiązkowym</strong>.

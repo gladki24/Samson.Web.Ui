@@ -1,6 +1,6 @@
+<mat-tab-group mat-align-tabs="start">
 
-<mat-tab-group mat-align-tabs="start" *appClientAccess>
-  <mat-tab label="Dostępne treningi indywidualne">
+  <mat-tab label="Dostępne treningi indywidualne" *appClientAccess>
     <app-individual-training-list
       (enroll)="onEnroll($event)"
       type="all"

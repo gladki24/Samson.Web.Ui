@@ -1,20 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MainComponentBase } from "../main-component.base";
 
 @Component({
   selector: 'app-event',
-  templateUrl: './event.component.html',
-  styleUrls: ['./event.component.scss']
+  templateUrl: './event.component.html'
 })
-export class EventComponent
-  extends MainComponentBase
-  implements OnInit {
+export class EventComponent extends MainComponentBase {
 
   public constructor() {
     super('Wydarzenia', 'Sprawdź dostępne wydarzenia i zapisz się na najciekawsze');
   }
-
-  ngOnInit(): void {
-  }
-
 }

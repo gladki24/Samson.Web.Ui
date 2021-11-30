@@ -5,7 +5,7 @@ import { NG_VALUE_ACCESSOR } from "@angular/forms";
 import { ReactiveInputBase } from "../../../classes/reactive-input.base";
 
 @Component({
-  selector: 'app-gym-object-select',
+  selector: ' app-gym-object-select',
   templateUrl: './gym-object-select.component.html',
   providers: [
     GymObjectSelectService,

@@ -12,7 +12,7 @@ export class ConfigureGateFormComponent extends FormComponentBase {
 
   @Output() public configurationChanged = new EventEmitter<GateConfigurationModel>();
 
-  public readonly gateTypeItems: any = [
+  public readonly gateTypeItems = [
     {
       name: 'Wejściowa',
       value: GateType.Entry

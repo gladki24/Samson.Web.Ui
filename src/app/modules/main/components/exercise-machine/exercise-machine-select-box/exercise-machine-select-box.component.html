@@ -1,0 +1,10 @@
+<app-select-box
+  [control]="control"
+  [items]="machines$ | async"
+  [value]="value"
+  [readOnly]="readOnly"
+  [disabled]="disabled"
+  label="Maszyny"
+  displayExpr="name"
+  valueExpr="id"
+></app-select-box>

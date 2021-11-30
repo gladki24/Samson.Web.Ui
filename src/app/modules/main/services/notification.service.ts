@@ -45,4 +45,20 @@ export class MainNotificationService {
   public notifyTraningConfirmed(): void {
     this._notificationService.showSuccess('Potwierdzono trening');
   }
+
+  public notifyExerciseMachineUpdated(): void {
+    this._notificationService.showSuccess('Maszyna została zaktualizowana');
+  }
+
+  public notifyExerciseMachineDeleted(): void {
+    this._notificationService.showSuccess('Maszyna została usunięta');
+  }
+
+  public notifyExerciseMachineCreated(): void {
+    this._notificationService.showSuccess('Maszyna została utworzona');
+  }
+
+  public notifyPersonalTrainerCreated(): void {
+    this._notificationService.showSuccess('Konto trenera personalnego zostało utworzone');
+  }
 }
