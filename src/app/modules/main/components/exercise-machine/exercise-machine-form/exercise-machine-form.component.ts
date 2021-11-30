@@ -10,7 +10,7 @@ import { UpdateExerciseMachineViewModel } from "../../../../shared/models/exerci
 })
 export class ExerciseMachineFormComponent extends FormComponentBase {
 
-  @Output() public update = new EventEmitter<UpdateExerciseMachineViewModel>();
+  @Output() public readonly update = new EventEmitter<UpdateExerciseMachineViewModel>();
 
   @Input() public id?: string;
   @Input() public name?: string;

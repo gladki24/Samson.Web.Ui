@@ -52,6 +52,11 @@ import { CreatePersonalTrainerComponent } from './components/personal-trainer/cr
 import { PersonalTrainerComponent } from './components/personal-trainer/personal-trainer/personal-trainer.component';
 import { CreateEventComponent } from './components/event/create-event/create-event.component';
 import { GymRoomSelectBoxComponent } from './components/gym-object/gym-room-select-box/gym-room-select-box.component';
+import { GymPassFormComponent } from './components/gym-pass/gym-pass-form/gym-pass-form.component';
+import { CreateGymPassComponent } from './components/gym-pass/create-gym-pass/create-gym-pass.component';
+import { UpdateGymPassComponent } from './components/gym-pass/update-gym-pass/update-gym-pass.component';
+import { GymPassManageComponent } from "./components/gym-pass/gym-pass/gym-pass-manage.component";
+import { GymPassSelectBoxComponent } from './components/gym-pass/gym-pass-select-box/gym-pass-select-box.component';
 
 
 @NgModule({
@@ -90,7 +95,12 @@ import { GymRoomSelectBoxComponent } from './components/gym-object/gym-room-sele
     CreatePersonalTrainerComponent,
     PersonalTrainerComponent,
     CreateEventComponent,
-    GymRoomSelectBoxComponent
+    GymRoomSelectBoxComponent,
+    GymPassFormComponent,
+    CreateGymPassComponent,
+    UpdateGymPassComponent,
+    GymPassManageComponent,
+    GymPassSelectBoxComponent
   ],
     imports: [
         CommonModule,

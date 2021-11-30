@@ -14,7 +14,10 @@ class IndividualTrainingsViewModel {
   providedIn: 'root'
 })
 @State<IndividualTrainingsViewModel>({
-  name: 'individuaTraining'
+  name: 'individuaTraining',
+  defaults: {
+    trainings: []
+  }
 })
 export class IndividualTrainingState {
 

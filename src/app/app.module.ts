@@ -18,6 +18,7 @@ import { JWT_OPTIONS, JwtHelperService } from "@auth0/angular-jwt";
 import { UserState } from "./modules/shared/states/user.state";
 import { IndividualTrainingState } from "./modules/shared/states/individual-training.state";
 import { ExerciseMachineState } from "./modules/shared/states/exercise-machine-state.service";
+import { GymPassState } from "./modules/shared/states/gym-pass.state";
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ExerciseMachineState } from "./modules/shared/states/exercise-machine-s
       PersonalTrainerState,
       UserState,
       IndividualTrainingState,
-      ExerciseMachineState
+      ExerciseMachineState,
+      GymPassState
     ], {
       developmentMode: !environment.production
     }),

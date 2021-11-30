@@ -30,6 +30,18 @@ export class MainNotificationService {
     this._notificationService.showSuccess("Karnet został przedłużony");
   }
 
+  public notifyGymPassCreated(): void {
+    this._notificationService.showSuccess("Karnet został utworzony");
+  }
+
+  public notifyGymPassUpdated(): void {
+    this._notificationService.showSuccess("Karnet został zaktualizowany");
+  }
+
+  public notifyGymPassDeleted(): void {
+    this._notificationService.showSuccess("Karnet został usunięty");
+  }
+
   public notifyCreatedIndividualTraining(): void {
     this._notificationService.showSuccess("Utworzono treining indywidualny");
   }
