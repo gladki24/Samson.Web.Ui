@@ -21,6 +21,7 @@ import { ExerciseMachineState } from "./modules/shared/states/exercise-machine-s
 import { GymPassState } from "./modules/shared/states/gym-pass.state";
 import { GymObjectState } from "./modules/shared/states/gym-object.state";
 import { GymRoomState } from "./modules/shared/states/gym-rooms.state";
+import { EventState } from "./modules/shared/states/event.state";
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { GymRoomState } from "./modules/shared/states/gym-rooms.state";
       ExerciseMachineState,
       GymPassState,
       GymObjectState,
-      GymRoomState
+      GymRoomState,
+      EventState
     ], {
       developmentMode: !environment.production
     }),

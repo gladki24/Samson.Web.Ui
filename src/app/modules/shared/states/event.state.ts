@@ -3,11 +3,6 @@ import { Action, Selector, State, StateContext } from "@ngxs/store";
 import { Injectable } from "@angular/core";
 import { EventService } from "../services/api-service/event.service";
 import { Event } from "../actions/event.action";
-import { CreateEventViewModel } from "../models/event/payloads/create-event-view.model";
-import { UpdateEventViewModel } from "../models/event/payloads/update-event-view.model";
-import { EnrollEventViewModel } from "../models/event/payloads/enroll-event-view.model";
-import { DeleteEventViewModel } from "../models/event/payloads/delete-event-view.model";
-import { ResignEventViewModel } from "../models/event/payloads/resign-event-view.model";
 import { EventRequestFactory } from "../utils/event-request-factory";
 import { flatMap } from "rxjs/operators";
 
@@ -56,7 +51,7 @@ export class EventState {
   }
 
   @Action(Event.Create)
-  public create(ctx: StateContext<EventsViewModel>, payload: CreateEventViewModel) {
+  public create(ctx: StateContext<EventsViewModel>, {payload}: Event.Create) {
     const request = EventRequestFactory.getCreateEventRequest(payload.name, payload.startDate, payload.endDate,
       payload.maximumParticipants, payload.eventSupervisorId, payload.gymRoomId);
 
@@ -66,7 +61,7 @@ export class EventState {
   }
 
   @Action(Event.Update)
-  public update(ctx: StateContext<EventsViewModel>, payload: UpdateEventViewModel) {
+  public update(ctx: StateContext<EventsViewModel>, {payload}: Event.Update) {
     const request = EventRequestFactory.getUpdateEventRequest(payload.id, payload.name, payload.startDate, payload.endDate,
       payload.maximumParticipants, payload.eventSupervisorId, payload.gymRoomId);
 
@@ -76,7 +71,7 @@ export class EventState {
   }
 
   @Action(Event.Enroll)
-  public enroll(ctx: StateContext<EventsViewModel>, payload: EnrollEventViewModel) {
+  public enroll(ctx: StateContext<EventsViewModel>, {payload}: Event.Enroll) {
     const request = EventRequestFactory.getEnrollEventRequest(payload.clientId, payload.eventId);
 
     return this._apiService.enroll(request).pipe(
@@ -85,7 +80,7 @@ export class EventState {
   }
 
   @Action(Event.Delete)
-  public delete(ctx: StateContext<EventsViewModel>, payload: DeleteEventViewModel) {
+  public delete(ctx: StateContext<EventsViewModel>, {payload}: Event.Delete) {
     const request = EventRequestFactory.getDeleteEventRequest(payload.id);
 
     return this._apiService.delete(request).pipe(
@@ -94,7 +89,7 @@ export class EventState {
   }
 
   @Action(Event.Resign)
-  public resign(ctx: StateContext<EventsViewModel>, payload: ResignEventViewModel) {
+  public resign(ctx: StateContext<EventsViewModel>, {payload}: Event.Resign) {
     const request = EventRequestFactory.getResignEventRequest(payload.clientId ,payload.eventId);
 
     return this._apiService.resign(request).pipe(

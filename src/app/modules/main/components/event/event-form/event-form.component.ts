@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormComponentBase } from "../../../../shared/classes/form-component.base";
 import { FormBuilder, Validators } from "@angular/forms";
 import { Moment } from "moment";
+import { CreateEventViewModel } from "../../../../shared/models/event/payloads/create-event-view.model";
 
 export interface EventFormViewModel {
   name: string,
@@ -19,7 +20,7 @@ export interface EventFormViewModel {
 })
 export class EventFormComponent extends FormComponentBase {
 
-  @Output() update = new EventEmitter<EventFormViewModel>();
+  @Output() update = new EventEmitter<CreateEventViewModel>();
 
   @Input() public id?: string;
   @Input() public name?: string;
@@ -44,7 +45,27 @@ export class EventFormComponent extends FormComponentBase {
 
 
   public onSubmit(): void {
-    this.update.next(this.form.value);
+    const startDate = this.getValue<Moment>('startDate');
+    const startTime = this.getValue<string>('startTime');
+
+    startDate.add(startTime);
+
+    const endDate = this.getValue<Moment>('endDate');
+    const endTime = this.getValue<string>('endTime');
+
+    endDate.add(endTime);
+
+    const payload: CreateEventViewModel = {
+      name: this.getValue('name'),
+      startDate: startDate.toDate(),
+      endDate: endDate.toDate(),
+      maximumParticipants: this.getValue('maximumParticipants'),
+      gymRoomId: this.getValue('gymRoomId'),
+      eventSupervisorId: '',
+      participantsId: []
+    };
+
+    this.update.next(payload);
 
     if (!this.id) {
       this.form.reset();

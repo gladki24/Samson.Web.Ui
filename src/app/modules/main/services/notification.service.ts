@@ -93,4 +93,8 @@ export class MainNotificationService {
   public notifyPersonalTrainerCreated(): void {
     this._notificationService.showSuccess('Konto trenera personalnego zostało utworzone');
   }
+
+  public notifyEventCreated(): void {
+    this._notificationService.showSuccess('Wydarzenie zostało utworzone');
+  }
 }
