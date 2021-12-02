@@ -1,0 +1,10 @@
+<app-select-box
+  [control]="control"
+  [items]="rooms$ | async"
+  [value]="value"
+  [readOnly]="readOnly"
+  [disabled]="disabled"
+  label="Siłownie"
+  displayExpr="name"
+  valueExpr="id"
+></app-select-box>

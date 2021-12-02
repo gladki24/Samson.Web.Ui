@@ -1,0 +1,8 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <app-text-box [control]="getFormControl('name')" label="Nazwa"></app-text-box>
+  <app-text-box [control]="getFormControl('personPerMeter')" label="Ilość osób na metr kwadratowy"></app-text-box>
+
+  <button mat-flat-button type="submit" color="primary" [disabled]="invalid">
+    Aktualizuj
+  </button>
+</form>

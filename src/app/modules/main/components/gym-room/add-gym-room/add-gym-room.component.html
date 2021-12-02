@@ -1,0 +1,8 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <app-gym-object-select-box [control]="getFormControl('gymObjectId')"></app-gym-object-select-box>
+  <app-text-box [control]="getFormControl('name')" label="Nazwa pokoju"></app-text-box>
+  <app-text-box type="number" [min]="1" [control]="getFormControl('width')" label="Szerokość pokoju"></app-text-box>
+  <app-text-box type="number" [min]="1" [control]="getFormControl('height')" label="Długość pokoju"></app-text-box>
+
+  <button type="submit" mat-flat-button color="primary">Dodaj pokój</button>
+</form>

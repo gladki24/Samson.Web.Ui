@@ -1,0 +1,20 @@
+<form [formGroup]="form" (ngSubmit)="loadData()">
+  <app-gym-object-select-box [control]="getFormControl('id')"></app-gym-object-select-box>
+
+  <button mat-flat-button [disabled]="invalid" color="primary" class="margin-right-1">
+    Edytuj
+  </button>
+
+  <button mat-flat-button [disabled]="invalid" color="warn" type="button" (click)="deleteGymObject()">
+    Usuń
+  </button>
+</form>
+
+<app-gym-object-form
+  *ngIf="gymObject"
+  [id]="gymObject.id"
+  [name]="gymObject.name"
+  [personPerMeter]="gymObject.covidConfiguration?.personFactorPerMeter"
+  [isActive]="gymObject.covidConfiguration?.isActive"
+  (update)="updateGymObject($event)"
+></app-gym-object-form>

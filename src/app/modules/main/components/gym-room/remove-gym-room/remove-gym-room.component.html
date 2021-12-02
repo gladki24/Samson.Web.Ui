@@ -1,0 +1,8 @@
+<form [formGroup]="form" (ngSubmit)="deleteGymObject()">
+  <app-gym-object-select-box [control]="getFormControl('gymObjectId')"></app-gym-object-select-box>
+  <app-gym-room-select-box [control]="getFormControl('gymRoomId')"></app-gym-room-select-box>
+
+  <button mat-flat-button [disabled]="invalid" color="primary">
+    Usuń
+  </button>
+</form>

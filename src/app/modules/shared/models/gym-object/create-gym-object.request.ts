@@ -5,7 +5,7 @@ export class CreateGymObjectRequest {
   public constructor(
     public readonly name: string,
     public readonly covidConfiguration: CovidConfigurationRequest,
-    public readonly rooms: GymRoomRequest
+    public readonly rooms: GymRoomRequest[]
   ) {
   }
 }
