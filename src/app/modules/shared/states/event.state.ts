@@ -23,6 +23,11 @@ export class EventState {
   }
 
   @Selector()
+  public static event(state: EventsViewModel) {
+    return (id: string) => state.events.find(e => e.id === id);
+  }
+
+  @Selector()
   public static allEvents(state: EventsViewModel) {
     return state.events;
   }

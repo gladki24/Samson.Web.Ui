@@ -64,6 +64,8 @@ import { GymObjectFormComponent } from './components/gym-object/gym-object-form/
 import { GymObjectSelectBoxComponent } from './components/gym-object/gym-object-select-box/gym-object-select-box.component';
 import { AddGymRoomComponent } from './components/gym-room/add-gym-room/add-gym-room.component';
 import { RemoveGymRoomComponent } from './components/gym-room/remove-gym-room/remove-gym-room.component';
+import { PreviewEventComponent } from './components/event/preview-event/preview-event.component';
+import { GymRoomLookupComponent } from './components/gym-room/gym-room-lookup/gym-room-lookup.component';
 
 
 @NgModule({
@@ -114,7 +116,9 @@ import { RemoveGymRoomComponent } from './components/gym-room/remove-gym-room/re
     GymObjectFormComponent,
     GymObjectSelectBoxComponent,
     AddGymRoomComponent,
-    RemoveGymRoomComponent
+    RemoveGymRoomComponent,
+    PreviewEventComponent,
+    GymRoomLookupComponent
   ],
     imports: [
         CommonModule,

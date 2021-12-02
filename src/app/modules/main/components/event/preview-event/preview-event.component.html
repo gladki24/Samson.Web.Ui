@@ -1,0 +1,31 @@
+<p>
+  Nazwa wydarzenia: {{ event.name }}
+</p>
+
+<p>
+  Czas rozpoczęcia: {{ event.startDate | date: 'dd/MM/yyyy hh:mm' }}
+</p>
+
+<p>
+  Koniec wydarzenia: {{ event.startDate | date: 'dd/MM/yyyy hh:mm' }}
+</p>
+
+<p>
+  Ilość uczestników: {{ event.participantsId.length }}
+</p>
+
+<p>
+  Opiekun wydarzenia: <app-personal-trainer-lookup [personalTrainerId]="event.eventSupervisorId"></app-personal-trainer-lookup>
+</p>
+
+<p>
+  Miejsce wydarzenia: <app-gym-room-lookup [gymRoomId]="event.gymRoomId"></app-gym-room-lookup>
+</p>
+
+<div>
+  <button mat-flat-button color="primary" (click)="cancel()">Anuluj</button>
+  <button mat-flat-button color="primary" (click)="enroll()">Zapisz się</button>
+  <button mat-flat-button color="primary" (click)="resign()">Zrezygnuj z udziału</button>
+</div>
+
+

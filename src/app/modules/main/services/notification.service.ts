@@ -97,4 +97,16 @@ export class MainNotificationService {
   public notifyEventCreated(): void {
     this._notificationService.showSuccess('Wydarzenie zostało utworzone');
   }
+
+  public notifyEventDeleted(): void {
+    this._notificationService.showSuccess('Wydarzenie zostało usunięte');
+  }
+
+  public notifyEventEnroll(): void {
+    this._notificationService.showSuccess('Zapisano się na wydarzenie');
+  }
+
+  public notifyEventResign(): void {
+    this._notificationService.showSuccess('Zrezygnowano z udziału w wydarzeniu');
+  }
 }
