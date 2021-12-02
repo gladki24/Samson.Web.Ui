@@ -10,6 +10,8 @@ import { IndividualTrainingComponent } from "./pages/individual-training/individ
 import { DashboardComponent } from "./pages/dashboard/dashboard.component";
 import { EntranceGateComponent } from "./pages/gates/entrance-gate/entrance-gate.component";
 import { ExitGateComponent } from "./pages/gates/exit-gate/exit-gate.component";
+import { PreviewEventComponent } from "./components/event/preview-event/preview-event.component";
+import { PreviewEventResolver } from "./components/event/preview-event/preview-event.resolver";
 const routes: Routes = [
   {
     path: '',
@@ -50,6 +52,13 @@ const routes: Routes = [
       {
         path: 'account',
         component: AccountComponent
+      },
+      {
+        path: 'event-preview',
+        component: PreviewEventComponent,
+        resolve: {
+          event: PreviewEventResolver
+        }
       }
     ]
   }

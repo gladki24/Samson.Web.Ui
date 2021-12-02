@@ -51,12 +51,21 @@ import { PersonalTrainerFormComponent } from './components/personal-trainer/pers
 import { CreatePersonalTrainerComponent } from './components/personal-trainer/create-personal-trainer/create-personal-trainer.component';
 import { PersonalTrainerComponent } from './components/personal-trainer/personal-trainer/personal-trainer.component';
 import { CreateEventComponent } from './components/event/create-event/create-event.component';
-import { GymRoomSelectBoxComponent } from './components/gym-object/gym-room-select-box/gym-room-select-box.component';
+import { GymRoomSelectBoxComponent } from './components/gym-room/gym-room-select-box/gym-room-select-box.component';
 import { GymPassFormComponent } from './components/gym-pass/gym-pass-form/gym-pass-form.component';
 import { CreateGymPassComponent } from './components/gym-pass/create-gym-pass/create-gym-pass.component';
 import { UpdateGymPassComponent } from './components/gym-pass/update-gym-pass/update-gym-pass.component';
 import { GymPassManageComponent } from "./components/gym-pass/gym-pass/gym-pass-manage.component";
 import { GymPassSelectBoxComponent } from './components/gym-pass/gym-pass-select-box/gym-pass-select-box.component';
+import { GymObjectComponent } from './components/gym-object/gym-object/gym-object.component';
+import { CreateGymObjectComponent } from './components/gym-object/create-gym-object/create-gym-object.component';
+import { UpdateGymObjectComponent } from './components/gym-object/update-gym-object/update-gym-object.component';
+import { GymObjectFormComponent } from './components/gym-object/gym-object-form/gym-object-form.component';
+import { GymObjectSelectBoxComponent } from './components/gym-object/gym-object-select-box/gym-object-select-box.component';
+import { AddGymRoomComponent } from './components/gym-room/add-gym-room/add-gym-room.component';
+import { RemoveGymRoomComponent } from './components/gym-room/remove-gym-room/remove-gym-room.component';
+import { PreviewEventComponent } from './components/event/preview-event/preview-event.component';
+import { GymRoomLookupComponent } from './components/gym-room/gym-room-lookup/gym-room-lookup.component';
 
 
 @NgModule({
@@ -100,7 +109,16 @@ import { GymPassSelectBoxComponent } from './components/gym-pass/gym-pass-select
     CreateGymPassComponent,
     UpdateGymPassComponent,
     GymPassManageComponent,
-    GymPassSelectBoxComponent
+    GymPassSelectBoxComponent,
+    GymObjectComponent,
+    CreateGymObjectComponent,
+    UpdateGymObjectComponent,
+    GymObjectFormComponent,
+    GymObjectSelectBoxComponent,
+    AddGymRoomComponent,
+    RemoveGymRoomComponent,
+    PreviewEventComponent,
+    GymRoomLookupComponent
   ],
     imports: [
         CommonModule,

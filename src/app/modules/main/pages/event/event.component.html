@@ -3,15 +3,15 @@
     <app-event-list type="all"></app-event-list>
   </mat-tab>
 
-  <mat-tab label="Moje wydarzenia (klient)">
+  <mat-tab label="Moje wydarzenia (klient)" *appClientAccess>
     <app-event-list type="client"></app-event-list>
   </mat-tab>
 
-  <mat-tab label="Moje wydarzenia (trener)">
+  <mat-tab label="Moje wydarzenia (trener)" *appPersonalTrainerAccess>
     <app-event-list type="trainer"></app-event-list>
   </mat-tab>
 
-  <mat-tab label="Utwórz wydarzenie">
-
+  <mat-tab label="Utwórz wydarzenie" *appPersonalTrainerAccess>
+    <app-create-event></app-create-event>
   </mat-tab>
 </mat-tab-group>

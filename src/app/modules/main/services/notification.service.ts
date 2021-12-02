@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NotificationService } from "../../../services/notification.service";
+import { NotificationService } from '../../../services/notification.service';
 
 @Injectable({
   providedIn: 'root'
@@ -27,27 +27,47 @@ export class MainNotificationService {
   }
 
   public notifyGymPassExtended(): void {
-    this._notificationService.showSuccess("Karnet został przedłużony");
+    this._notificationService.showSuccess('Karnet został przedłużony');
   }
 
   public notifyGymPassCreated(): void {
-    this._notificationService.showSuccess("Karnet został utworzony");
+    this._notificationService.showSuccess('Karnet został utworzony');
   }
 
   public notifyGymPassUpdated(): void {
-    this._notificationService.showSuccess("Karnet został zaktualizowany");
+    this._notificationService.showSuccess('Karnet został zaktualizowany');
   }
 
   public notifyGymPassDeleted(): void {
-    this._notificationService.showSuccess("Karnet został usunięty");
+    this._notificationService.showSuccess('Siłownia została usnięta');
+  }
+
+  public notifyGymObjectCreated(): void {
+    this._notificationService.showSuccess('Siłownia zostałą utworzona');
+  }
+
+  public notifyGymObjectUpdated(): void {
+    this._notificationService.showSuccess('Siłownia została zaktualizowana');
+  }
+
+  public notifyGymObjectDeleted(): void {
+    this._notificationService.showSuccess('Karnet został usunięty');
+  }
+
+  public notifyGymRoomAdded(): void {
+    this._notificationService.showSuccess('Pokój został dodany');
+  }
+
+  public notifyGymRemoved(): void {
+    this._notificationService.showSuccess('Pokój został usunięty');
   }
 
   public notifyCreatedIndividualTraining(): void {
-    this._notificationService.showSuccess("Utworzono treining indywidualny");
+    this._notificationService.showSuccess('Utworzono treining indywidualny');
   }
 
   public notifyTrainingEnroll(): void {
-    this._notificationService.showSuccess("Zapisano na trening");
+    this._notificationService.showSuccess('Zapisano na trening');
   }
 
   public notifyTrainingCancelled(): void {
@@ -72,5 +92,21 @@ export class MainNotificationService {
 
   public notifyPersonalTrainerCreated(): void {
     this._notificationService.showSuccess('Konto trenera personalnego zostało utworzone');
+  }
+
+  public notifyEventCreated(): void {
+    this._notificationService.showSuccess('Wydarzenie zostało utworzone');
+  }
+
+  public notifyEventDeleted(): void {
+    this._notificationService.showSuccess('Wydarzenie zostało usunięte');
+  }
+
+  public notifyEventEnroll(): void {
+    this._notificationService.showSuccess('Zapisano się na wydarzenie');
+  }
+
+  public notifyEventResign(): void {
+    this._notificationService.showSuccess('Zrezygnowano z udziału w wydarzeniu');
   }
 }

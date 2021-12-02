@@ -5,8 +5,7 @@ import { UpdateGymPassViewModel } from "../../../../shared/models/gym-pass/paylo
 
 @Component({
   selector: 'app-gym-pass-form',
-  templateUrl: './gym-pass-form.component.html',
-  styleUrls: ['./gym-pass-form.component.scss']
+  templateUrl: './gym-pass-form.component.html'
 })
 export class GymPassFormComponent extends FormComponentBase {
 

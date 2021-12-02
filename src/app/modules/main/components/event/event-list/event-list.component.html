@@ -39,7 +39,7 @@
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef> Akcje </th>
     <td mat-cell *matCellDef="let element">
-      <a href="" mat-flat-button color="primary">Podgląd</a>
+      <a routerLink="/event-preview" [queryParams]="{ event: element.id }" mat-flat-button color="primary">Podgląd</a>
     </td>
   </ng-container>
 

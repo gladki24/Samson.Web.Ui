@@ -1,0 +1,17 @@
+<mat-tab-group mat-align-tabs="start">
+  <mat-tab label="Edytuj" *appPersonalTrainerAccess>
+    <app-update-gym-object></app-update-gym-object>
+  </mat-tab>
+
+  <mat-tab label="Dodaj" *appPersonalTrainerAccess>
+    <app-create-gym-object></app-create-gym-object>
+  </mat-tab>
+
+  <mat-tab label="Dodaj pokój" *appPersonalTrainerAccess>
+    <app-add-gym-room></app-add-gym-room>
+  </mat-tab>
+
+  <mat-tab label="Usuń pokój" *appPersonalTrainerAccess>
+    <app-remove-gym-room></app-remove-gym-room>
+  </mat-tab>
+</mat-tab-group>

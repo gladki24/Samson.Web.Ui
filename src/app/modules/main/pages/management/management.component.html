@@ -1,16 +1,17 @@
 <mat-tab-group mat-align-tabs="start">
-  <mat-tab label="Siłownie">
+  <mat-tab label="Siłownie" *appPersonalTrainerAccess>
+    <app-gym-object></app-gym-object>
   </mat-tab>
 
   <mat-tab label="Trenerzy">
     <app-personal-trainer></app-personal-trainer>
   </mat-tab>
 
-  <mat-tab label="Maszyny">
+  <mat-tab label="Maszyny" *appPersonalTrainerAccess>
     <app-exercise-machine></app-exercise-machine>
   </mat-tab>
 
-  <mat-tab label="Karnety">
+  <mat-tab label="Karnety" *appPersonalTrainerAccess>
     <app-gym-pass-manage></app-gym-pass-manage>
   </mat-tab>
 </mat-tab-group>
