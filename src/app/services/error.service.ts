@@ -10,6 +10,9 @@ export class ErrorService {
   }
 
   public getServerMessage(error: HttpErrorResponse): string {
-    return error.error['message'];
+    if (!!error.error) {
+      return error.error['message'];
+    }
+    return error.message;
   }
 }
