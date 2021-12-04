@@ -2,7 +2,7 @@
   <app-text-box [control]="getFormControl('code')" label="Kod"></app-text-box>
   <app-text-box [control]="getFormControl('name')" label="Nazwa"></app-text-box>
   <app-exercise-machine-type-check-box [control]="getFormControl('type')"></app-exercise-machine-type-check-box>
-  <app-gym-object-select [control]="getFormControl('localizationGymObjectId')"></app-gym-object-select>
+  <app-gym-object-select-box [control]="getFormControl('localizationGymObjectId')"></app-gym-object-select-box>
 
   <button mat-flat-button type="submit" color="primary" [disabled]="invalid">
     Aktualizuj

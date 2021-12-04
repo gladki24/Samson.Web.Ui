@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Store } from "@ngxs/store";
 import { Event } from "../../../../shared/actions/event.action";
 import { LoginState } from "../../../../shared/states/login.state";
@@ -10,7 +10,7 @@ import { EventState } from "../../../../shared/states/event.state";
   selector: 'app-event-list',
   templateUrl: './event-list.component.html'
 })
-export class EventListComponent {
+export class EventListComponent implements OnInit {
 
   @Input() public type: 'client' | 'trainer' | 'all' = 'all';
 
@@ -23,6 +23,9 @@ export class EventListComponent {
   public constructor(
     private readonly _store: Store
   ) {
+  }
+
+  public ngOnInit(): void {
     this._store.dispatch(new Event.GetAll());
 
     const userId = this._store.selectSnapshot(LoginState.tokenData).id;

@@ -16,6 +16,9 @@ export class ClientAccessDirective {
     private viewContainer: ViewContainerRef,
     store: Store) {
     store.select(LoginState.tokenData).subscribe(data => {
+      if (!data || !data.role) {
+        return;
+      }
       this._isClient = data.role.includes(Role.Client);
 
       if (!this._hasView && this._isClient) {
