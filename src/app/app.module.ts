@@ -22,6 +22,7 @@ import { GymPassState } from "./modules/shared/states/gym-pass.state";
 import { GymObjectState } from "./modules/shared/states/gym-object.state";
 import { GymRoomState } from "./modules/shared/states/gym-rooms.state";
 import { EventState } from "./modules/shared/states/event.state";
+import { JwtInterceptor } from "./interceptors/jwt.interceptor";
 
 
 @NgModule({
@@ -65,6 +66,11 @@ import { EventState } from "./modules/shared/states/event.state";
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ServerErrorInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
       multi: true
     },
     JwtHelperService
