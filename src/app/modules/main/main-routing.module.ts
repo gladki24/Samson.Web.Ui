@@ -56,6 +56,7 @@ const routes: Routes = [
       {
         path: 'event-preview',
         component: PreviewEventComponent,
+        runGuardsAndResolvers: 'always',
         resolve: {
           event: PreviewEventResolver
         }

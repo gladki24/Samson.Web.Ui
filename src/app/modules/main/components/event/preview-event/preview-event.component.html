@@ -22,10 +22,14 @@
   Miejsce wydarzenia: <app-gym-room-lookup [gymRoomId]="event.gymRoomId"></app-gym-room-lookup>
 </p>
 
+<p>
+  Czy biorę udział: {{ isEnrolled | yesNo }}
+</p>
+
 <div>
-  <button mat-flat-button color="primary" (click)="cancel()">Anuluj</button>
-  <button mat-flat-button color="primary" (click)="enroll()">Zapisz się</button>
-  <button mat-flat-button color="primary" (click)="resign()">Zrezygnuj z udziału</button>
+  <button mat-flat-button color="primary" (click)="cancel()" class="margin-right-1" *appPersonalTrainerAccess>Anuluj</button>
+  <button mat-flat-button [disabled]="isEnrolled" color="primary" (click)="enroll()" class="margin-right-1" *appClientAccess>Zapisz się</button>
+  <button mat-flat-button [disabled]="!isEnrolled" color="primary" (click)="resign()" *appClientAccess>Zrezygnuj z udziału</button>
 </div>
 
 

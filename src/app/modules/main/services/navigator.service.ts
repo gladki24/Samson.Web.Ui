@@ -29,4 +29,16 @@ export class MainNavigatorService {
       }
     });
   }
+
+  public eventList(): Promise<boolean> {
+    return this._router.navigate(['event'])
+  }
+
+  public event(id: string): Promise<boolean> {
+    return this._router.navigate(['event-preview'], {
+      queryParams: {
+        event: id
+      }
+    })
+  }
 }

@@ -15,6 +15,10 @@ export class PersonalTrainerAccessDirective {
     private viewContainer: ViewContainerRef,
     store: Store) {
     store.select(LoginState.tokenData).subscribe(data => {
+      if (!data || !data.role) {
+        return;
+      }
+
       const isPersonalTrainer = data.role.includes(Role.PersonalTrainer);
 
       if (!this._hasView && isPersonalTrainer) {
