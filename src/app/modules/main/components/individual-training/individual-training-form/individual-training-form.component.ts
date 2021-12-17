@@ -7,6 +7,7 @@ import { CreateIndividualTrainingViewModel } from "../../../../shared/models/ind
 import { LoginState } from "../../../../shared/states/login.state";
 import { MainNotificationService } from "../../../services/notification.service";
 import { Moment } from "moment";
+import * as moment from "moment";
 
 @Component({
   selector: 'app-individual-training-form',
@@ -30,19 +31,19 @@ export class IndividualTrainingFormComponent extends FormComponentBase {
   }
 
   public addIndividualTraining(): void {
-    const startDate: Moment = this.getValue('startDate');
-    const startTime: string = this.getValue('startTime');
+    const startDate = this.getValue<Moment>('startDate');
+    const startTime = this.getValue<string>('startTime');
 
-    const endDate: Moment = this.getValue('endDate');
-    const endTime: string = this.getValue('endTime');
+    const endDate = this.getValue<Moment>('endDate');
+    const endTime = this.getValue<string>('endTime');
 
-    startDate.add(startTime);
-    endDate.add(endTime);
+    const startDateTime = moment(startDate.toISOString().split('T').shift() + ' ' + startTime);
+    const endDateTime = moment(endDate.toISOString().split('T').shift() + ' ' + endTime);
 
     const payload: CreateIndividualTrainingViewModel = {
       personalTrainerId: this._store.selectSnapshot(LoginState.tokenData).id,
-      startDate: startDate.toDate(),
-      endDate: endDate.toDate(),
+      startDate: startDateTime.toDate(),
+      endDate: endDateTime.toDate(),
       gymObjectId: this.getValue('gymObjectId')
     };
 

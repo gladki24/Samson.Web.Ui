@@ -14,7 +14,10 @@ class EventsViewModel {
   providedIn: 'root'
 })
 @State<EventsViewModel>({
-  name: 'event'
+  name: 'event',
+  defaults: {
+    events: []
+  }
 })
 export class EventState {
   public constructor(

@@ -3,6 +3,7 @@ import { FormComponentBase } from "../../../../shared/classes/form-component.bas
 import { FormBuilder, Validators } from "@angular/forms";
 import { Moment } from "moment";
 import { CreateEventViewModel } from "../../../../shared/models/event/payloads/create-event-view.model";
+import * as moment from "moment";
 
 export interface EventFormViewModel {
   name: string,
@@ -48,17 +49,16 @@ export class EventFormComponent extends FormComponentBase {
     const startDate = this.getValue<Moment>('startDate');
     const startTime = this.getValue<string>('startTime');
 
-    startDate.add(startTime);
-
     const endDate = this.getValue<Moment>('endDate');
     const endTime = this.getValue<string>('endTime');
 
-    endDate.add(endTime);
+    const startDateTime = moment(startDate.toISOString().split('T').shift() + ' ' + startTime);
+    const endDateTime = moment(endDate.toISOString().split('T').shift() + ' ' + endTime);
 
     const payload: CreateEventViewModel = {
       name: this.getValue('name'),
-      startDate: startDate.toDate(),
-      endDate: endDate.toDate(),
+      startDate: startDateTime.toDate(),
+      endDate: endDateTime.toDate(),
       maximumParticipants: this.getValue('maximumParticipants'),
       gymRoomId: this.getValue('gymRoomId'),
       eventSupervisorId: '',
